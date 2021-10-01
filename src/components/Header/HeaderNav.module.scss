@@ -1,0 +1,20 @@
+.wrapper {
+  margin-right: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navItem {
+  list-style: none;
+  text-decoration: none;
+
+  &Link {
+    text-decoration: none;
+    padding: 2rem;
+    color: #c7c7c7;
+  }
+  &Active {
+    color: rgb(144, 144, 144);
+    font-weight: 800;
+  }
+}
