@@ -4,6 +4,7 @@ import styled from "styled-components";
 class MainView extends React.Component {
   state = {
     apiData: [],
+    apiDataHead: [],
     isLoaded: false,
   };
 
@@ -14,7 +15,7 @@ class MainView extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            apiData: [...result[0].rates],
+            apiData: [...result[0].rates.slice(0, -1)],
           });
           console.log(this.state.apiData);
         },

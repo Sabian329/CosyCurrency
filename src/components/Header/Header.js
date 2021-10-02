@@ -2,7 +2,13 @@ import React from "react";
 import HeaderNav from "./HeaderNav";
 import style from "./Header.module.scss";
 import logo from "../../Asets/logo.png";
-import { LogoWrapper } from "./Header.styled";
+import {
+  container,
+  ContainerBtn,
+  HelloBtn,
+  LogoWrapper,
+  ShineEfect,
+} from "./Header.styled";
 import { OpenButton } from "./Header.styled";
 
 const Header = ({ openModalFunc }) => (
@@ -12,7 +18,10 @@ const Header = ({ openModalFunc }) => (
       <img src={logo} />
     </LogoWrapper>
     <HeaderNav />
-    <OpenButton onClick={openModalFunc}>Click</OpenButton>
+    <ContainerBtn>
+      <HelloBtn onClick={openModalFunc}>Click </HelloBtn>
+      <ShineEfect className="shine"></ShineEfect>
+    </ContainerBtn>
   </header>
 );
 

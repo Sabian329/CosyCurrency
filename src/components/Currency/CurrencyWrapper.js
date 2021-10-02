@@ -5,8 +5,8 @@ import CurrencyItem from "./CurrencyItem";
 const CurrencyWrapper = (props) => (
   <>
     <CrrWrapper>
-      {props.items.map((item) => (
-        <CurrencyItem key={item.mid} {...item} />
+      {props.items.map((item, index) => (
+        <CurrencyItem index={index + 1} key={item.mid} {...item} />
       ))}
     </CrrWrapper>
   </>
