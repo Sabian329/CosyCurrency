@@ -1,11 +1,13 @@
 import React from "react";
 import style from "./Modal.module.scss";
 import styled from "styled-components";
+import HeaderNav from "../Header/HeaderNav";
 
 const Modal = ({ closeModalFunc }) => (
   <div className={style.wrapper}>
     <CloseButton onClick={closeModalFunc}>X</CloseButton>
     <div>No money !?</div>
+    <HeaderNav />
   </div>
 );
 

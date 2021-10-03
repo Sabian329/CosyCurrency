@@ -1,9 +1,10 @@
 .wrapper {
   width: 100%;
-  background-color: rgb(85, 85, 149);
+  background-color: rgb(97, 97, 177);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem;
 }
 .wrapper img {
   margin-left: 1rem;
@@ -12,3 +13,8 @@
   // position: relative;
   // animation: mymove 2s infinite;
 }
+@media only screen and (max-width: 420px) {
+  .wrapper {
+    flex-direction: column;
+  }
+} ;

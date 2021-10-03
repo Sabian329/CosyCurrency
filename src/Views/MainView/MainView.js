@@ -15,7 +15,7 @@ class MainView extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            apiData: [...result[0].rates.slice(0, -1)],
+            apiData: [...result[0].rates],
           });
           console.log(this.state.apiData);
         },
