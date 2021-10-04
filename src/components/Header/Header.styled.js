@@ -14,12 +14,15 @@ export const LogoWrapper = styled.div`
 `;
 
 export const HelloBtn = styled.button`
-  background: #6161b1;
+  background: #8181dd;
+  color: #ffff;
+  border: none;
   border-radius: 3rem;
   padding: 1rem;
   margin-right: 2rem;
-  color: #c7c7c7;
-  -webkit-box-shadow: -1px 13px 15px -6px rgba(0, 0, 0, 0.64);
+  font-size: 1rem;
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
   @media only screen and (min-width: 900px) {
     display: none;
   }

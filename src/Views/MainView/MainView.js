@@ -9,7 +9,7 @@ class MainView extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://api.nbp.pl/api/exchangerates/tables/a/?format=json")
+    fetch("https://api.nbp.pl/api/exchangerates/tables/a/?format=json")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -39,9 +39,7 @@ class MainView extends React.Component {
 }
 export default MainView;
 
-const MainStylesView = styled.div`
+const MainStylesView = styled.section`
   display: flex;
-  flex-direction: column;
-  width: 98%;
-  color: #ffff;
+  justify-content: center;
 `;
