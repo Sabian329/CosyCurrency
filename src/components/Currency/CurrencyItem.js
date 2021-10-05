@@ -4,7 +4,7 @@ import { CrrItemWrapper, Item, ItemValue, ItemShort } from "./CurrncyStyled";
 import { names } from "../../Constants/currencyNames";
 import moneylogo from "../../Asets/moneylogo.png";
 
-const CurrencyItem = ({ index, currency, code: short, mid: value }) => (
+const CurrencyItem = ({ code: short, mid: value }) => (
   <CrrItemWrapper>
     {short == "XDR" ? (
       <img src={moneylogo} />
@@ -18,7 +18,7 @@ const CurrencyItem = ({ index, currency, code: short, mid: value }) => (
       <Item>{names[short.toLowerCase()]}</Item>
     </div>
     <div>
-      <ItemValue>{value}</ItemValue>
+      <ItemValue>{Math.round(value * 10000) / 10000}</ItemValue>
       <ItemValue>PLN</ItemValue>
     </div>
   </CrrItemWrapper>

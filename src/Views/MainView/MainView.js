@@ -29,6 +29,12 @@ class MainView extends React.Component {
       );
   }
 
+  sortingByValue = () => {
+    let toSort = this.state.apiData;
+    toSort.sort((a, b) => (a.mid < b.mid ? 1 : -1));
+    this.setState({ apiData: toSort });
+  };
+
   render() {
     return (
       <MainStylesView>

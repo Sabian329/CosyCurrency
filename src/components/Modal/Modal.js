@@ -1,27 +1,19 @@
 import React from "react";
-import style from "./Modal.module.scss";
 import styled from "styled-components";
 import HeaderNav from "../Header/HeaderNav";
+import SortDropDown from "../SortDropDown/SortDropDown";
+import ModalNav from "./ModalNav";
+import { Wrapper, CloseButton, MainWrapper } from "./ModalStyle";
 
 const Modal = ({ closeModalFunc }) => (
-  <div className={style.wrapper}>
-    <CloseButton onClick={closeModalFunc}>X</CloseButton>
-    <div>No money !?</div>
-    <HeaderNav />
-  </div>
+  <MainWrapper onClick={closeModalFunc}>
+    <Wrapper onClick="event.stopPropagation();">
+      <div>No money !?</div>
+      <ModalNav />
+      <p>Sort By</p>
+      <SortDropDown />
+    </Wrapper>
+  </MainWrapper>
 );
 
 export default Modal;
-
-const CloseButton = styled.button`
-  border: none;
-  border-radius: 1rem;
-  width: 5rem;
-  height: 3rem;
-  background-color: rgb(100, 106, 221);
-  font-size: 1rem;
-  color: #ffff;
-  margin: 2rem;
-  -webkit-box-shadow: -1px 13px 15px -6px rgba(0, 0, 0, 0.64);
-  box-shadow: -1px 13px 15px -6px rgba(0, 0, 0, 0.64);
-`;

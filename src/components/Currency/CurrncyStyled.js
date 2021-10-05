@@ -9,6 +9,7 @@ export const CrrItemWrapper = styled.tr`
   background-color: rgb(100, 106, 221);
   margin: 1rem;
   padding: 1rem;
+  border-radius: 15px;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   img {
