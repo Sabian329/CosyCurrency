@@ -27,7 +27,7 @@ class Root extends React.Component {
         <BrowserRouter>
           <>
             <Header openModalFunc={this.toogleModalVisibility} />
-            <h1>This is CosyCurrency app enjoy </h1>
+            {/* <h1>This is CosyCurrency app enjoy </h1> */}
             <Switch>
               <Route exact path="/" component={MainView} />
               <Route path="/country" component={CountryView} />
