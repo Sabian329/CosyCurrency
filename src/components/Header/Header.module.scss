@@ -5,6 +5,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  @media only screen and (max-width: 550px) {
+    padding: 1rem;
+  }
 }
 .wrapper img {
   margin-left: 1rem;
@@ -13,8 +16,3 @@
   // position: relative;
   // animation: mymove 2s infinite;
 }
-@media only screen and (max-width: 420px) {
-  .wrapper {
-    flex-direction: column;
-  }
-} ;
