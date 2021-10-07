@@ -2,10 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import CurrencyItem from "./CurrencyItem";
 
-const CurrencyWrapper = (props) => (
+const CurrencyWrapper = ({ items, isEnglish }) => (
   <CrrWrapper>
-    {props.items.map((item, index) => (
-      <CurrencyItem index={index + 1} key={item.mid} {...item} />
+    {items.map((item, index) => (
+      <CurrencyItem
+        isEnglish={isEnglish}
+        index={index + 1}
+        key={item.mid}
+        {...item}
+      />
     ))}
   </CrrWrapper>
 );

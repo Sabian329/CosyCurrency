@@ -4,7 +4,7 @@ export const WrapperMain = styled.div`
   font-size: 1.2rem;
   font-weight: 600;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 export const Wrapper = styled.div`

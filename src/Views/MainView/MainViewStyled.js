@@ -5,6 +5,7 @@ export const MainStylesView = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   h1 {
     padding: 0 1rem 0 1rem;
     font-size: 2rem;

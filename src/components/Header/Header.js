@@ -1,19 +1,40 @@
 import React from "react";
-import HeaderNav from "./HeaderNav";
-import style from "./Header.module.scss";
 import logo from "../../Asets/logo.png";
-import { HelloBtn, LogoWrapper, HeaderNavWrapper } from "./Header.styled";
-const Header = ({ openModalFunc }) => (
-  <header className={style.wrapper}>
+import {
+  HelloBtn,
+  LogoWrapper,
+  SortBarWrapper,
+  Wrapper,
+  LangButtonWrapper,
+} from "./Header.styled";
+import LangButton from "../LangButton/LangButton";
+import SortBar from "../SortBar/SortBar";
+const Header = ({
+  openModalFunc,
+  isEnglish,
+  lang,
+  native,
+  sortingByValue,
+  sortingByName,
+}) => (
+  <Wrapper>
     <LogoWrapper>
       <p>Cosy Currency</p>
       <img src={logo} />
     </LogoWrapper>
-    <HeaderNavWrapper>
-      <HeaderNav />
-    </HeaderNavWrapper>
+    <SortBarWrapper>
+      <SortBar
+        isEnglish={isEnglish}
+        native={native}
+        sortingByValue={sortingByValue}
+        sortingByName={sortingByName}
+      />
+    </SortBarWrapper>
     <HelloBtn onClick={openModalFunc}>More</HelloBtn>
-  </header>
+    <LangButtonWrapper>
+      <LangButton isEnglish={isEnglish} lang={lang} />
+    </LangButtonWrapper>
+  </Wrapper>
 );
 
 export default Header;

@@ -29,6 +29,18 @@ export const LogoWrapper = styled.div`
   }
 `;
 
+export const Wrapper = styled.header`
+  width: 100%;
+  background-color: rgb(97, 97, 177);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  @media only screen and (max-width: 550px) {
+    padding: 1rem;
+  }
+`;
+
 export const HelloBtn = styled.button`
   height: 4rem;
   width: 6rem;
@@ -48,7 +60,12 @@ export const HelloBtn = styled.button`
     margin-left: 1rem;
   }
 `;
-export const HeaderNavWrapper = styled.div`
+export const SortBarWrapper = styled.div`
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
+`;
+export const LangButtonWrapper = styled.div`
   @media only screen and (max-width: 900px) {
     display: none;
   }

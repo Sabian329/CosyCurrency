@@ -1,13 +1,15 @@
 import React from "react";
 import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
-import styled from "styled-components";
 import { MainStylesView } from "./MainViewStyled";
 import SortBar from "../../components/SortBar/SortBar";
+import Header from "../../components/Header/Header";
+import Modal from "../../components/Modal/Modal";
 class MainView extends React.Component {
   state = {
     apiData: [],
-    apiDataNative: [],
+    isEnglish: true,
     isLoaded: false,
+    isModalOpen: false,
   };
 
   componentDidMount() {
@@ -31,6 +33,12 @@ class MainView extends React.Component {
         }
       );
   }
+  toogleModalVisibility = () => {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
+  };
+  closeModal = () => {
+    this.setState({ isModalOpen: false });
+  };
 
   sortingByValue = () => {
     let toSort = this.state.apiData;
@@ -45,17 +53,37 @@ class MainView extends React.Component {
   nativeSort = () => {
     this.componentDidMount();
   };
+  langSet = () => {
+    this.setState({ isEnglish: !this.state.isEnglish });
+    console.log(this.state.isEnglish);
+  };
 
   render() {
+    const { isModalOpen } = this.state;
     return (
       <MainStylesView>
-        <h1>This is CosyCurrency app enjoy </h1>
-        <SortBar
+        <Header
           native={this.nativeSort}
           sortingByValue={this.sortingByValue}
           sortingByName={this.sortingByName}
+          lang={this.langSet}
+          isEnglish={this.state.isEnglish}
+          openModalFunc={this.toogleModalVisibility}
         />
-        <CurrencyWrapper items={this.state.apiData} />
+        {isModalOpen && (
+          <Modal
+            closeModalFunc={this.closeModal}
+            lang={this.langSet}
+            isEnglish={this.state.isEnglish}
+            native={this.nativeSort}
+            sortingByValue={this.sortingByValue}
+            sortingByName={this.sortingByName}
+          />
+        )}
+        <CurrencyWrapper
+          isEnglish={this.state.isEnglish}
+          items={this.state.apiData}
+        />
       </MainStylesView>
     );
   }

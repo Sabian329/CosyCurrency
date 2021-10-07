@@ -28,6 +28,7 @@ export const Wrapper = styled.div`
   box-shadow: 0px 20px 40px -10px rgba(#818181, 0.5);
   position: fixed;
   border-radius: 15px;
+  z-index: 100;
   @media only screen and (max-width: 550px) {
     width: 60vw;
   }
