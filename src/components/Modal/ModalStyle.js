@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 01rem;
+  padding: 2rem;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
@@ -46,5 +46,5 @@ export const CloseButton = styled.button`
   box-shadow: -1px 13px 15px -6px rgba(0, 0, 0, 0.64);
 `;
 export const LangButtonWrapper = styled.div`
-  margin-top: 2rem;
+  top: 2rem;
 `;

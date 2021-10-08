@@ -5,10 +5,6 @@ import moneylogo from "../../Asets/moneylogo.png";
 const CurrencyItem = ({ currency, code: short, mid: value, isEnglish }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen]);
-
   return (
     <CrrItemWrapper onClick={() => setIsOpen(!isOpen)}>
       {short == "XDR" ? (

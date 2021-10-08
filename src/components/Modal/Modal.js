@@ -13,7 +13,6 @@ const Modal = ({
 }) => (
   <MainWrapper onClick={closeModalFunc}>
     <Wrapper onClick={(proxy) => proxy.stopPropagation()}>
-      <div>No money !?</div>
       <LangButtonWrapper>
         <LangButton isEnglish={isEnglish} lang={lang} />
       </LangButtonWrapper>

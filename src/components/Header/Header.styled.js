@@ -30,12 +30,14 @@ export const LogoWrapper = styled.div`
 `;
 
 export const Wrapper = styled.header`
+  height: 5rem;
   width: 100%;
   background-color: rgba(100, 100, 100, 0.201);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 0.2rem;
+  position: relative;
   @media only screen and (max-width: 550px) {
     padding: 1rem;
   }
