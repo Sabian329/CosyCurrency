@@ -1,13 +1,16 @@
 import React from "react";
-import "./index.css";
 import MainView from "../MainView/MainView";
+import { GlobalStyles } from "../../GlobalStyle/GlobalStyle";
 
 class Root extends React.Component {
   render() {
     return (
-      <section>
-        <MainView />
-      </section>
+      <>
+        <GlobalStyles />
+        <section>
+          <MainView />
+        </section>
+      </>
     );
   }
 }

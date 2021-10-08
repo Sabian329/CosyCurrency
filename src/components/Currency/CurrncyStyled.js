@@ -5,11 +5,12 @@ export const CrrItemWrapper = styled.tr`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 30rem;
-  background-color: rgb(100, 106, 221);
+  height: 7rem;
+  width: 32rem;
+  background-color: #2e8de7;
   margin: 1rem;
   padding: 1rem;
-  border-radius: 15px;
+  border-radius: 10px;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   @media only screen and (max-width: 550px) {
@@ -26,11 +27,12 @@ export const CrrItemWrapper = styled.tr`
     }
   }
   div {
-    width: 10rem;
+    width: 12rem;
     padding: 0 1rem 0 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
     @media only screen and (max-width: 550px) {
       width: 5rem;
       font-size: 0.8rem;

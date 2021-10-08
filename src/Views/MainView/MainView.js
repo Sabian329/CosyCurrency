@@ -22,7 +22,6 @@ class MainView extends React.Component {
             apiData: [...result[0].rates],
             apiDataNative: [...result[0].rates],
           });
-          console.log(this.state.apiData);
         },
 
         (error) => {
@@ -55,7 +54,6 @@ class MainView extends React.Component {
   };
   langSet = () => {
     this.setState({ isEnglish: !this.state.isEnglish });
-    console.log(this.state.isEnglish);
   };
 
   render() {

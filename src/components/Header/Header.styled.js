@@ -4,7 +4,7 @@ export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #8181dd;
+  background-color: #2e8de7;
   margin-left: 2rem;
   border-radius: 3rem;
   padding: 0 0rem 0 1rem;
@@ -31,7 +31,7 @@ export const LogoWrapper = styled.div`
 
 export const Wrapper = styled.header`
   width: 100%;
-  background-color: rgb(97, 97, 177);
+  background-color: rgba(100, 100, 100, 0.201);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +44,7 @@ export const Wrapper = styled.header`
 export const HelloBtn = styled.button`
   height: 4rem;
   width: 6rem;
-  background: #8181dd;
+  background-color: #2e8de7;
   color: #ffff;
   border: none;
   border-radius: 3rem;

@@ -6,6 +6,8 @@ export const MainStylesView = styled.section`
   align-items: center;
   justify-content: center;
 
+  backdrop-filter: blur(1px);
+
   h1 {
     padding: 0 1rem 0 1rem;
     font-size: 2rem;

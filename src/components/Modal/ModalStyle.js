@@ -45,3 +45,6 @@ export const CloseButton = styled.button`
   -webkit-box-shadow: -1px 13px 15px -6px rgba(0, 0, 0, 0.64);
   box-shadow: -1px 13px 15px -6px rgba(0, 0, 0, 0.64);
 `;
+export const LangButtonWrapper = styled.div`
+  margin-top: 2rem;
+`;

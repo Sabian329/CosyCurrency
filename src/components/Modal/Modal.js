@@ -1,7 +1,7 @@
 import React from "react";
 import LangButton from "../LangButton/LangButton";
 import SortBar from "../SortBar/SortBar";
-import { Wrapper, MainWrapper } from "./ModalStyle";
+import { Wrapper, MainWrapper, LangButtonWrapper } from "./ModalStyle";
 
 const Modal = ({
   closeModalFunc,
@@ -14,7 +14,9 @@ const Modal = ({
   <MainWrapper onClick={closeModalFunc}>
     <Wrapper onClick={(proxy) => proxy.stopPropagation()}>
       <div>No money !?</div>
-      <LangButton isEnglish={isEnglish} lang={lang} />
+      <LangButtonWrapper>
+        <LangButton isEnglish={isEnglish} lang={lang} />
+      </LangButtonWrapper>
       <SortBar
         isEnglish={isEnglish}
         native={native}
