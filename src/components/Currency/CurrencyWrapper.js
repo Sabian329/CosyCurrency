@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { CrrWrapper } from "./CurrncyStyled";
 import CurrencyItem from "./CurrencyItem";
 
 const CurrencyWrapper = ({ items, isEnglish }) => (
@@ -16,11 +16,3 @@ const CurrencyWrapper = ({ items, isEnglish }) => (
 );
 
 export default CurrencyWrapper;
-
-const CrrWrapper = styled.table`
-  padding: 1rem;
-  display: flex;
-
-  justify-content: center;
-  flex-wrap: wrap;
-`;

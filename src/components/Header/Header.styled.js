@@ -14,6 +14,23 @@ export const LogoWrapper = styled.div`
   img {
     margin-left: 1rem;
     height: 4rem;
+    position: relative;
+    animation-name: slide-in;
+    animation-duration: 2s;
+    :hover {
+      height: 4.5rem;
+    }
+
+    @keyframes slide-in {
+      from {
+        left: -10rem;
+        transform: rotate(-360deg);
+      }
+      to {
+        left: 0px;
+      }
+    }
+
     @media only screen and (max-width: 550px) {
       margin-left: 0.4rem;
     }
@@ -68,6 +85,7 @@ export const SortBarWrapper = styled.div`
   }
 `;
 export const LangButtonWrapper = styled.div`
+  margin-right: 2rem;
   @media only screen and (max-width: 900px) {
     display: none;
   }

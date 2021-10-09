@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const Wrapper = styled.nav`
   position: absolute;
-  top: 0.8rem;
-  left: 50%;
+  top: 0rem;
+  left: 47%;
+  padding: 0;
+  margin: 0;
   @media only screen and (max-width: 900px) {
     position: absolute;
     top: 15%;

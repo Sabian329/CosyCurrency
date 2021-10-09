@@ -13,7 +13,7 @@ const SortBar = (props) => {
           isOpen ? arrows.up : arrows.down
         }`}</p>
       ) : (
-        <p onClick={() => setIsOpen(!isOpen)}>{`sotuj wedłóg${
+        <p onClick={() => setIsOpen(!isOpen)}>{`sotuj według${
           isOpen ? arrows.up : arrows.down
         }`}</p>
       )}

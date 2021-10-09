@@ -1,7 +1,6 @@
 import React from "react";
 import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
 import { MainStylesView } from "./MainViewStyled";
-import SortBar from "../../components/SortBar/SortBar";
 import Header from "../../components/Header/Header";
 import Modal from "../../components/Modal/Modal";
 class MainView extends React.Component {
