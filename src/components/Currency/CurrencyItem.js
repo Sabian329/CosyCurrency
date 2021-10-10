@@ -4,10 +4,9 @@ import {
   Item,
   ItemValue,
   ItemShort,
-  SmallWrapper,
   Flag,
-  DropWrapper,
   MainWrapper,
+  ItemsWrapper,
 } from "./CurrncyStyled";
 import { names } from "../../Constants/currencyNames";
 import moneylogo from "../../Asets/moneylogo.png";
@@ -19,7 +18,7 @@ const CurrencyItem = ({ currency, code: short, mid: value, isEnglish }) => {
   return (
     <MainWrapper>
       <CrrItemWrapper onClick={() => setIsOpen(!isOpen)}>
-        {short == "XDR" ? (
+        {short.slice(0, -2) == "X" ? (
           <Flag src={moneylogo} alt="Flag" />
         ) : (
           <Flag
@@ -30,23 +29,21 @@ const CurrencyItem = ({ currency, code: short, mid: value, isEnglish }) => {
             alt="Flag"
           />
         )}
-        <SmallWrapper>
+        <ItemsWrapper>
           <ItemShort>{short}</ItemShort>
           {isEnglish ? (
             <Item>{names[short.toLowerCase()]}</Item>
           ) : (
             <Item>{currency}</Item>
           )}
-        </SmallWrapper>
-        <SmallWrapper>
+        </ItemsWrapper>
+        <ItemsWrapper>
           <ItemValue>{Math.round(value * 10000) / 10000}</ItemValue>
           <ItemValue>PLN</ItemValue>
-        </SmallWrapper>
+        </ItemsWrapper>
       </CrrItemWrapper>
       <UnmountClosed isOpened={isOpen}>
-        <DropWrapper>
-          <CurrencyDrop value={value} />
-        </DropWrapper>
+        <CurrencyDrop value={value} short={short} />
       </UnmountClosed>
     </MainWrapper>
   );

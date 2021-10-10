@@ -16,13 +16,14 @@ export const CrrItemWrapper = styled.li`
   height: 7rem;
   width: 32rem;
   background-color: #2e8de7;
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
   border-radius: 10px;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   @media only screen and (max-width: 550px) {
-    width: 17rem;
-    margin: 0.5rem;
+    height: 5rem;
+    width: 19rem;
+    margin: 0.7rem 0 0 0;
     flex-wrap: nowrap;
   }
 `;
@@ -53,7 +54,7 @@ export const ItemShort = styled.h2`
   }
 `;
 
-export const SmallWrapper = styled.div`
+export const ItemsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,13 +76,10 @@ export const Flag = styled.img`
   @media only screen and (max-width: 550px) {
     width: 60px;
     height: 60px;
+    margin-right: 1rem;
   }
 `;
 
-export const DropWrapper = styled.div`
-  width: 20rem;
-  background-color: #2e8de7;
-`;
 export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;

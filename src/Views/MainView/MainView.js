@@ -3,6 +3,8 @@ import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
 import { MainStylesView } from "./MainViewStyled";
 import Header from "../../components/Header/Header";
 import Modal from "../../components/Modal/Modal";
+import { LinkTBa, LinkTBb } from "../../Constants/Links";
+
 class MainView extends React.Component {
   state = {
     apiData: [],
@@ -12,7 +14,7 @@ class MainView extends React.Component {
   };
 
   componentDidMount() {
-    fetch("https://api.nbp.pl/api/exchangerates/tables/a/?format=json")
+    fetch(LinkTBb)
       .then((res) => res.json())
       .then(
         (result) => {

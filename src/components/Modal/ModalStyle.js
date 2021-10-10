@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
   right: 0;
   margin: 0 auto;
   width: 30vw;
-  height: 70vh;
+  height: 40vh;
   background-color: rgb(180, 180, 180);
   box-shadow: 0px 20px 40px -10px rgba(#818181, 0.5);
   position: fixed;

@@ -61,13 +61,12 @@ export const Wrapper = styled.header`
 `;
 
 export const HelloBtn = styled.button`
-  height: 4rem;
-  width: 6rem;
+  height: 2rem;
+  width: 5rem;
   background-color: #2e8de7;
   color: #ffff;
   border: none;
   border-radius: 3rem;
-  padding: 1rem;
   margin-right: 2rem;
   font-size: 1rem;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
