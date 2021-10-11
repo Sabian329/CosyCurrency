@@ -1,90 +1,73 @@
-import React from "react";
-import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
+import React, { useState, useEffect } from "react";
 import { MainStylesView } from "./MainViewStyled";
-import Header from "../../components/Header/Header";
-import Modal from "../../components/Modal/Modal";
 import { LinkTBa, LinkTBb } from "../../Constants/Links";
+import Header from "../../components/Header/Header";
+import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
+import Modal from "../../components/Modal/Modal";
 
-class MainView extends React.Component {
-  state = {
-    apiData: [],
-    isEnglish: true,
-    isLoaded: false,
-    isModalOpen: false,
-  };
-
-  componentDidMount() {
-    fetch(LinkTBb)
+const MainView = () => {
+  const [error, setError] = useState(null);
+  const [apiData, setApiData] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(true);
+  const [isModal, setIsModal] = useState(false);
+  const [sortDirectV, setSortDirectV] = useState(false);
+  const [sortDirect, setSortDirect] = useState(false);
+  useEffect(() => {
+    fetch(LinkTBa)
       .then((res) => res.json())
       .then(
         (result) => {
-          this.setState({
-            isLoaded: true,
-            apiData: [...result[0].rates],
-            apiDataNative: [...result[0].rates],
-          });
+          setIsLoaded(true);
+          setApiData(
+            [...result[0].rates].sort((a, b) => (a.code > b.code ? 1 : -1))
+          );
         },
-
         (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
+          setIsLoaded(true);
+          setError(error);
         }
       );
-  }
-  toogleModalVisibility = () => {
-    this.setState({ isModalOpen: !this.state.isModalOpen });
+  }, []);
+  const sortByValue = () => {
+    setSortDirectV(!sortDirectV);
+    sortDirectV
+      ? setApiData([...apiData.sort((a, b) => (a.mid > b.mid ? 1 : -1))])
+      : setApiData([...apiData.sort((a, b) => (a.mid < b.mid ? 1 : -1))]);
   };
-  closeModal = () => {
-    this.setState({ isModalOpen: false });
+  const sortByName = () => {
+    setSortDirect(!sortDirect);
+    sortDirect
+      ? setApiData([...apiData.sort((a, b) => (a.code > b.code ? 1 : -1))])
+      : setApiData([...apiData.sort((a, b) => (a.code < b.code ? 1 : -1))]);
   };
+  return (
+    <MainStylesView>
+      <Header
+        isEnglish={isEnglish}
+        lang={() => setIsEnglish(!isEnglish)}
+        sortByValue={sortByValue}
+        sortByName={sortByName}
+        sortDirect={sortDirect}
+        sortDirectV={sortDirectV}
+        openModalFunc={() => setIsModal(true)}
+      />
 
-  sortingByValue = () => {
-    let toSort = this.state.apiData;
-    toSort.sort((a, b) => (a.mid < b.mid ? 1 : -1));
-    this.setState({ apiData: toSort });
-  };
-  sortingByName = () => {
-    let toSort = this.state.apiData;
-    toSort.sort((a, b) => (a.code > b.code ? 1 : -1));
-    this.setState({ apiData: toSort });
-  };
-  nativeSort = () => {
-    this.componentDidMount();
-  };
-  langSet = () => {
-    this.setState({ isEnglish: !this.state.isEnglish });
-  };
+      {isModal && (
+        <Modal
+          isModal={isModal}
+          isEnglish={isEnglish}
+          lang={() => setIsEnglish(!isEnglish)}
+          closeModalFunc={() => setIsModal(false)}
+          sortByValue={sortByValue}
+          sortByName={sortByName}
+          sortDirect={sortDirect}
+          sortDirectV={sortDirectV}
+        />
+      )}
 
-  render() {
-    const { isModalOpen } = this.state;
-    return (
-      <MainStylesView>
-        <Header
-          native={this.nativeSort}
-          sortingByValue={this.sortingByValue}
-          sortingByName={this.sortingByName}
-          lang={this.langSet}
-          isEnglish={this.state.isEnglish}
-          openModalFunc={this.toogleModalVisibility}
-        />
-        {isModalOpen && (
-          <Modal
-            closeModalFunc={this.closeModal}
-            lang={this.langSet}
-            isEnglish={this.state.isEnglish}
-            native={this.nativeSort}
-            sortingByValue={this.sortingByValue}
-            sortingByName={this.sortingByName}
-          />
-        )}
-        <CurrencyWrapper
-          isEnglish={this.state.isEnglish}
-          items={this.state.apiData}
-        />
-      </MainStylesView>
-    );
-  }
-}
+      <CurrencyWrapper items={apiData} isEnglish={isEnglish} />
+    </MainStylesView>
+  );
+};
 export default MainView;

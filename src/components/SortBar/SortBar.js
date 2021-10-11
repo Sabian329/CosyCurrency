@@ -3,12 +3,21 @@ import { UnmountClosed } from "react-collapse";
 import { Wrapper, BtnsWrapper } from "./SortBarStyled";
 import { arrows } from "../../Constants/arrows";
 
-const SortBar = (props) => {
+const SortBar = ({
+  sortByValue,
+  sortByName,
+  isEnglish,
+  sortDirect,
+  sortDirectV,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  let ar = sortDirectV ? arrows.down : arrows.up;
+  let aro = sortDirect ? arrows.down : arrows.up;
 
   return (
     <Wrapper>
-      {props.isEnglish ? (
+      {isEnglish ? (
         <p onClick={() => setIsOpen(!isOpen)}>{`sort by${
           isOpen ? arrows.up : arrows.down
         }`}</p>
@@ -19,16 +28,11 @@ const SortBar = (props) => {
       )}
       <UnmountClosed isOpened={isOpen}>
         <BtnsWrapper>
-          <button onClick={props.native}>
-            {props.isEnglish ? <p>default</p> : <p>domyślnie</p>}
+          <button onClick={sortByName}>
+            {isEnglish ? <p>{`name${aro}`}</p> : <p>{`nazwy${ar}`}</p>}
           </button>
-
-          <button onClick={props.sortingByName}>
-            {props.isEnglish ? <p>name</p> : <p>nazwy</p>}
-          </button>
-
-          <button onClick={props.sortingByValue}>
-            {props.isEnglish ? <p>value</p> : <p>wartości</p>}
+          <button onClick={sortByValue}>
+            {isEnglish ? <p>{`value${ar}`}</p> : <p>{`wartości${ar}`}</p>}
           </button>
         </BtnsWrapper>
       </UnmountClosed>

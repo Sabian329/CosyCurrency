@@ -10,12 +10,13 @@ import {
 import LangButton from "../LangButton/LangButton";
 import SortBar from "../SortBar/SortBar";
 const Header = ({
-  openModalFunc,
   isEnglish,
+  sortByValue,
+  sortByName,
   lang,
-  native,
-  sortingByValue,
-  sortingByName,
+  sortDirect,
+  sortDirectV,
+  openModalFunc,
 }) => (
   <Wrapper>
     <LogoWrapper>
@@ -25,9 +26,10 @@ const Header = ({
     <SortBarWrapper>
       <SortBar
         isEnglish={isEnglish}
-        native={native}
-        sortingByValue={sortingByValue}
-        sortingByName={sortingByName}
+        sortByValue={sortByValue}
+        sortByName={sortByName}
+        sortDirect={sortDirect}
+        sortDirectV={sortDirectV}
       />
     </SortBarWrapper>
     <HelloBtn onClick={openModalFunc}>More</HelloBtn>

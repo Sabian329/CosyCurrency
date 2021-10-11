@@ -7,9 +7,10 @@ const Modal = ({
   closeModalFunc,
   isEnglish,
   lang,
-  native,
-  sortingByName,
-  sortingByValue,
+  sortByValue,
+  sortByName,
+  sortDirect,
+  sortDirectV,
 }) => (
   <MainWrapper onClick={closeModalFunc}>
     <Wrapper onClick={(proxy) => proxy.stopPropagation()}>
@@ -18,9 +19,10 @@ const Modal = ({
       </LangButtonWrapper>
       <SortBar
         isEnglish={isEnglish}
-        native={native}
-        sortingByValue={sortingByValue}
-        sortingByName={sortingByName}
+        sortByValue={sortByValue}
+        sortByName={sortByName}
+        sortDirect={sortDirect}
+        sortDirectV={sortDirectV}
       />
     </Wrapper>
   </MainWrapper>
