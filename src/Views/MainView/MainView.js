@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MainStylesView } from "./MainViewStyled";
-import { LinkTBa, LinkTBb } from "../../Constants/Links";
+import { LinkTBa } from "../../Constants/Links";
 import Header from "../../components/Header/Header";
 import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
 import Modal from "../../components/Modal/Modal";
@@ -11,8 +11,16 @@ const MainView = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isEnglish, setIsEnglish] = useState(true);
   const [isModal, setIsModal] = useState(false);
-  const [sortDirectV, setSortDirectV] = useState(false);
   const [sortDirect, setSortDirect] = useState(false);
+  const [favourites, setFavourites] = useState(
+    localStorage.getItem("favs") ? JSON.parse(localStorage.getItem("favs")) : []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("favs", JSON.stringify(favourites));
+    console.log(favourites);
+  }, [favourites]);
+
   useEffect(() => {
     fetch(LinkTBa)
       .then((res) => res.json())
@@ -29,27 +37,25 @@ const MainView = () => {
         }
       );
   }, []);
-  const sortByValue = () => {
-    setSortDirectV(!sortDirectV);
-    sortDirectV
-      ? setApiData([...apiData.sort((a, b) => (a.mid > b.mid ? 1 : -1))])
-      : setApiData([...apiData.sort((a, b) => (a.mid < b.mid ? 1 : -1))]);
-  };
-  const sortByName = () => {
+  const sortBy = (param) => {
     setSortDirect(!sortDirect);
     sortDirect
-      ? setApiData([...apiData.sort((a, b) => (a.code > b.code ? 1 : -1))])
-      : setApiData([...apiData.sort((a, b) => (a.code < b.code ? 1 : -1))]);
+      ? setApiData([
+          ...apiData.sort((a, b) => (a?.[param] > b?.[param] ? 1 : -1)),
+        ])
+      : setApiData([
+          ...apiData.sort((a, b) => (a?.[param] < b?.[param] ? 1 : -1)),
+        ]);
+    console.log(apiData);
   };
+
   return (
     <MainStylesView>
       <Header
         isEnglish={isEnglish}
         lang={() => setIsEnglish(!isEnglish)}
-        sortByValue={sortByValue}
-        sortByName={sortByName}
+        sortBy={sortBy}
         sortDirect={sortDirect}
-        sortDirectV={sortDirectV}
         openModalFunc={() => setIsModal(true)}
       />
 
@@ -59,14 +65,17 @@ const MainView = () => {
           isEnglish={isEnglish}
           lang={() => setIsEnglish(!isEnglish)}
           closeModalFunc={() => setIsModal(false)}
-          sortByValue={sortByValue}
-          sortByName={sortByName}
+          sortBy={sortBy}
           sortDirect={sortDirect}
-          sortDirectV={sortDirectV}
         />
       )}
 
-      <CurrencyWrapper items={apiData} isEnglish={isEnglish} />
+      <CurrencyWrapper
+        items={apiData}
+        isEnglish={isEnglish}
+        favourites={favourites}
+        setFavourites={setFavourites}
+      />
     </MainStylesView>
   );
 };

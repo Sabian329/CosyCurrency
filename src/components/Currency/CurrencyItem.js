@@ -12,7 +12,14 @@ import { names } from "../../Constants/currencyNames";
 import moneylogo from "../../Asets/moneylogo.png";
 import { UnmountClosed } from "react-collapse";
 import CurrencyDrop from "../CurrencyDrop/CurrencyDrop";
-const CurrencyItem = ({ currency, code: short, mid: value, isEnglish }) => {
+const CurrencyItem = ({
+  favourites,
+  setFavourites,
+  currency,
+  code: short,
+  mid: value,
+  isEnglish,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -43,7 +50,12 @@ const CurrencyItem = ({ currency, code: short, mid: value, isEnglish }) => {
         </ItemsWrapper>
       </CrrItemWrapper>
       <UnmountClosed isOpened={isOpen}>
-        <CurrencyDrop value={value} short={short} />
+        <CurrencyDrop
+          favourites={favourites}
+          setFavourites={setFavourites}
+          value={value}
+          short={short}
+        />
       </UnmountClosed>
     </MainWrapper>
   );

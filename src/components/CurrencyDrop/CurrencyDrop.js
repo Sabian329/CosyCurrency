@@ -3,16 +3,24 @@ import { UnmountClosed } from "react-collapse";
 import { arrows } from "../../Constants/arrows";
 import { Wrapper } from "./CurrencyDropStyled";
 
-const CurrencyDrop = ({ value, short }) => {
+const CurrencyDrop = ({ value, short, favourites, setFavourites }) => {
   const [inputValue, setInputValue] = useState("");
-  const [IsOpen, setIsOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
+  const deleteFav = () => favourites.filter((crr) => crr !== short);
   return (
     <Wrapper>
       <p>add to favourites</p>
-      <button>add</button>
+      <button
+        onClick={() =>
+          favourites.includes(short)
+            ? setFavourites(deleteFav())
+            : setFavourites([...favourites, short])
+        }
+      >
+        add
+      </button>
       <p>exchange</p>
-      <UnmountClosed isOpened={IsOpen}>
+      <UnmountClosed isOpened={isOpen}>
         <input
           type="number"
           placeholder="PLN"
@@ -20,13 +28,13 @@ const CurrencyDrop = ({ value, short }) => {
         />
         <div>{Math.round((inputValue / value) * 100) / 100 + ` ` + short}</div>
       </UnmountClosed>
-      {IsOpen ? (
+      {isOpen ? (
         <button
-          onClick={() => setIsOpen(!IsOpen)}
+          onClick={() => setIsOpen(!isOpen)}
         >{`close${arrows.up}`}</button>
       ) : (
         <button
-          onClick={() => setIsOpen(!IsOpen)}
+          onClick={() => setIsOpen(!isOpen)}
         >{`open${arrows.down}`}</button>
       )}
     </Wrapper>

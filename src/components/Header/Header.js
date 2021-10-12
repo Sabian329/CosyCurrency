@@ -9,28 +9,14 @@ import {
 } from "./Header.styled";
 import LangButton from "../LangButton/LangButton";
 import SortBar from "../SortBar/SortBar";
-const Header = ({
-  isEnglish,
-  sortByValue,
-  sortByName,
-  lang,
-  sortDirect,
-  sortDirectV,
-  openModalFunc,
-}) => (
+const Header = ({ isEnglish, sortBy, lang, sortDirect, openModalFunc }) => (
   <Wrapper>
-    <LogoWrapper>
+    <LogoWrapper onClick={() => sortBy("code")}>
       <p>Cosy Currency</p>
       <img src={logo} />
     </LogoWrapper>
     <SortBarWrapper>
-      <SortBar
-        isEnglish={isEnglish}
-        sortByValue={sortByValue}
-        sortByName={sortByName}
-        sortDirect={sortDirect}
-        sortDirectV={sortDirectV}
-      />
+      <SortBar isEnglish={isEnglish} sortBy={sortBy} sortDirect={sortDirect} />
     </SortBarWrapper>
     <HelloBtn onClick={openModalFunc}>More</HelloBtn>
     <LangButtonWrapper>
