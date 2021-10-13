@@ -27,14 +27,14 @@ const CurrencyItem = ({
 
   useEffect(() => setIsOpen(ind === index ? true : false), [ind]);
 
-  const showIndex = () => {
+  const swithDrop = () => {
     setInd(index);
     setIsOpen(!isOpen);
   };
 
   return (
     <MainWrapper>
-      <CrrItemWrapper onClick={() => showIndex()}>
+      <CrrItemWrapper onClick={() => swithDrop()}>
         {short.slice(0, -2) === "X" ? (
           <Flag src={moneylogo} alt="Flag" />
         ) : (
