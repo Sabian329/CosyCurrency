@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const CrrWrapper = styled.ul`
@@ -13,7 +12,7 @@ export const CrrItemWrapper = styled.li`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 7rem;
+  height: 6rem;
   width: 32rem;
   background-color: #2e8de7;
   margin: 1rem 1rem 0 1rem;
@@ -61,7 +60,7 @@ export const ItemsWrapper = styled.div`
   height: max-content;
   width: 12rem;
   padding: 0 1rem 0 1rem;
-  height: 7rem;
+  height: 5rem;
   overflow: hidden;
   @media only screen and (max-width: 550px) {
     width: 5rem;
@@ -73,10 +72,12 @@ export const ItemsWrapper = styled.div`
 export const Flag = styled.img`
   width: 80px;
   height: 80px;
+  margin-left: 3rem;
   @media only screen and (max-width: 550px) {
     width: 60px;
     height: 60px;
     margin-right: 1rem;
+    margin-left: 0;
   }
 `;
 

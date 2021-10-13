@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   CrrItemWrapper,
   Item,
@@ -19,13 +19,23 @@ const CurrencyItem = ({
   code: short,
   mid: value,
   isEnglish,
+  index,
+  ind,
+  setInd,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => setIsOpen(ind === index ? true : false), [ind]);
+
+  const showIndex = () => {
+    setInd(index);
+    setIsOpen(!isOpen);
+  };
+
   return (
     <MainWrapper>
-      <CrrItemWrapper onClick={() => setIsOpen(!isOpen)}>
-        {short.slice(0, -2) == "X" ? (
+      <CrrItemWrapper onClick={() => showIndex()}>
+        {short.slice(0, -2) === "X" ? (
           <Flag src={moneylogo} alt="Flag" />
         ) : (
           <Flag

@@ -8,7 +8,7 @@ export const Wrapper = styled.nav`
   margin: 0;
   @media only screen and (max-width: 900px) {
     position: absolute;
-    top: 15%;
+    top: 20%;
     left: 0;
     right: 0;
     text-align: center;

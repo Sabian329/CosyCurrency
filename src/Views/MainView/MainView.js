@@ -3,10 +3,10 @@ import { MainStylesView } from "./MainViewStyled";
 import { LinkTBa } from "../../Constants/Links";
 import Header from "../../components/Header/Header";
 import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
-import Modal from "../../components/Modal/Modal";
+import { Modal } from "../../components/Modal/Index";
 
 const MainView = () => {
-  const [error, setError] = useState(null);
+  const [errors, setErrors] = useState(null);
   const [apiData, setApiData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isEnglish, setIsEnglish] = useState(true);
@@ -15,10 +15,10 @@ const MainView = () => {
   const [favourites, setFavourites] = useState(
     localStorage.getItem("favs") ? JSON.parse(localStorage.getItem("favs")) : []
   );
+  const [isFiltered, setIsFiltered] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("favs", JSON.stringify(favourites));
-    console.log(favourites);
   }, [favourites]);
 
   useEffect(() => {
@@ -30,10 +30,12 @@ const MainView = () => {
           setApiData(
             [...result[0].rates].sort((a, b) => (a.code > b.code ? 1 : -1))
           );
+          console.log("is loaded " + isLoaded);
         },
         (error) => {
           setIsLoaded(true);
-          setError(error);
+          setErrors(error);
+          console.log(errors);
         }
       );
   }, []);
@@ -46,9 +48,12 @@ const MainView = () => {
       : setApiData([
           ...apiData.sort((a, b) => (a?.[param] < b?.[param] ? 1 : -1)),
         ]);
-    console.log(apiData);
   };
 
+  const filterApi = () => {
+    let filtered = apiData.filter((x) => favourites.includes(x.code));
+    return filtered;
+  };
   return (
     <MainStylesView>
       <Header
@@ -57,8 +62,9 @@ const MainView = () => {
         sortBy={sortBy}
         sortDirect={sortDirect}
         openModalFunc={() => setIsModal(true)}
+        setIsFiltered={setIsFiltered}
+        isFiltered={isFiltered}
       />
-
       {isModal && (
         <Modal
           isModal={isModal}
@@ -67,6 +73,8 @@ const MainView = () => {
           closeModalFunc={() => setIsModal(false)}
           sortBy={sortBy}
           sortDirect={sortDirect}
+          setIsFiltered={setIsFiltered}
+          isFiltered={isFiltered}
         />
       )}
 
@@ -75,6 +83,9 @@ const MainView = () => {
         isEnglish={isEnglish}
         favourites={favourites}
         setFavourites={setFavourites}
+        isFiltered={isFiltered}
+        setIsFiltered={setIsFiltered}
+        filterApi={filterApi}
       />
     </MainStylesView>
   );

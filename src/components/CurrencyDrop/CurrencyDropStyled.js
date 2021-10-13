@@ -13,16 +13,6 @@ export const Wrapper = styled.div`
   @media only screen and (max-width: 550px) {
     width: 15rem;
   }
-  button {
-    border: none;
-    border-radius: 7px;
-    padding: 0.5rem;
-    font-size: 1rem;
-    background-color: #c9ebff;
-    color: #818181;
-    -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  }
   input {
     background-color: transparent;
     border: none;
@@ -40,7 +30,36 @@ export const Wrapper = styled.div`
     }
   }
   p {
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0;
     margin: 0;
   }
+`;
+
+export const OptionWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FavBtn = styled.button`
+  border: none;
+  border-radius: 7px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: transparent;
+  img {
+    width: 1.4rem;
+  }
+`;
+export const OpenBtn = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 7px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #c9ebff;
+  color: #818181;
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 `;

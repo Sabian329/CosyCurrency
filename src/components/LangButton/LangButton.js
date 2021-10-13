@@ -6,12 +6,12 @@ const LangButton = ({ isEnglish, lang }) => (
   <>
     {isEnglish ? (
       <Btn onClick={lang}>
-        <img src={Flags.polish} />
+        <img src={Flags.polish} alt="polish flag" />
         <p>Polska wersja</p>
       </Btn>
     ) : (
       <Btn onClick={lang}>
-        <img src={Flags.english} />
+        <img src={Flags.english} alt="english flag" />
         <p>English version</p>
       </Btn>
     )}

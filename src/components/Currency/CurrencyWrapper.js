@@ -1,29 +1,53 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { CrrWrapper } from "./CurrncyStyled";
 import CurrencyItem from "./CurrencyItem";
+import { NoFavourites } from "../NoFavourites/Index";
 
-const CurrencyWrapper = ({ items, isEnglish }) => {
-  const [favourites, setFavourites] = useState(
-    localStorage.getItem("favs") ? JSON.parse(localStorage.getItem("favs")) : []
-  );
-
-  useEffect(() => {
-    localStorage.setItem("favs", JSON.stringify(favourites));
-    console.log(favourites);
-  }, [favourites]);
+const CurrencyWrapper = ({
+  items,
+  isEnglish,
+  favourites,
+  setFavourites,
+  isFiltered,
+  filterApi,
+  setIsFiltered,
+}) => {
+  const [ind, setInd] = useState();
+  let filterLeng = filterApi().length;
 
   return (
     <CrrWrapper>
-      {items.map((item, index) => (
-        <CurrencyItem
-          favourites={favourites}
-          setFavourites={setFavourites}
-          isEnglish={isEnglish}
-          index={index + 1}
-          key={item.mid}
-          {...item}
-        />
-      ))}
+      {isFiltered ? (
+        filterLeng === 0 ? (
+          <NoFavourites setIsFiltered={setIsFiltered} />
+        ) : (
+          filterApi().map((item, index) => (
+            <CurrencyItem
+              ind={ind}
+              setInd={setInd}
+              favourites={favourites}
+              setFavourites={setFavourites}
+              isEnglish={isEnglish}
+              index={index + 1}
+              key={item.mid}
+              {...item}
+            />
+          ))
+        )
+      ) : (
+        items.map((item, index) => (
+          <CurrencyItem
+            ind={ind}
+            setInd={setInd}
+            favourites={favourites}
+            setFavourites={setFavourites}
+            isEnglish={isEnglish}
+            index={index + 1}
+            key={item.mid}
+            {...item}
+          />
+        ))
+      )}
     </CrrWrapper>
   );
 };

@@ -3,7 +3,13 @@ import { UnmountClosed } from "react-collapse";
 import { Wrapper, BtnsWrapper } from "./SortBarStyled";
 import { arrows } from "../../Constants/arrows";
 
-const SortBar = ({ sortBy, isEnglish, sortDirect }) => {
+const SortBar = ({
+  sortBy,
+  isEnglish,
+  sortDirect,
+  setIsFiltered,
+  isFiltered,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [arrow, setArrow] = useState(false);
 
@@ -21,11 +27,11 @@ const SortBar = ({ sortBy, isEnglish, sortDirect }) => {
   return (
     <Wrapper>
       {isEnglish ? (
-        <p onClick={() => setIsOpen(!isOpen)}>{`sort by${
+        <p onClick={() => setIsOpen(!isOpen)}>{`more${
           isOpen ? arrows.up : arrows.down
         }`}</p>
       ) : (
-        <p onClick={() => setIsOpen(!isOpen)}>{`sotuj według${
+        <p onClick={() => setIsOpen(!isOpen)}>{`więcej${
           isOpen ? arrows.up : arrows.down
         }`}</p>
       )}
@@ -33,19 +39,31 @@ const SortBar = ({ sortBy, isEnglish, sortDirect }) => {
         <BtnsWrapper>
           <button onClick={() => nameFunc()}>
             {isEnglish ? (
-              <p>{`name${arrow ? ar : empty}`}</p>
+              <p>{`sort by name${arrow ? ar : empty}`}</p>
             ) : (
-              <p>{`nazwy${arrow ? ar : empty}`}</p>
+              <p>{`sortój według nazwy${arrow ? ar : empty}`}</p>
             )}
           </button>
           <button onClick={() => valueFunc()}>
             {isEnglish ? (
-              <p>{`value${arrow ? empty : ar}`}</p>
+              <p>{`sort by value${arrow ? empty : ar}`}</p>
             ) : (
-              <p>{`wartości${arrow ? empty : ar}`}</p>
+              <p>{`sortuj według wartości${arrow ? empty : ar}`}</p>
             )}
           </button>
-          <button>{isEnglish ? <p>favourites</p> : <p>ulubione</p>}</button>
+          <button onClick={() => setIsFiltered(!isFiltered)}>
+            {isFiltered ? (
+              isEnglish ? (
+                <p>show all</p>
+              ) : (
+                <p>pokaż wszystkie</p>
+              )
+            ) : isEnglish ? (
+              <p>show favourites</p>
+            ) : (
+              <p>pokaż ulubione</p>
+            )}
+          </button>
         </BtnsWrapper>
       </UnmountClosed>
     </Wrapper>

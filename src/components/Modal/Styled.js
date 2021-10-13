@@ -30,7 +30,8 @@ export const Wrapper = styled.div`
   border-radius: 15px;
   z-index: 100;
   @media only screen and (max-width: 550px) {
-    width: 60vw;
+    width: 65vw;
+    height: 55vh;
   }
 `;
 
