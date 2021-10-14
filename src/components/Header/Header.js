@@ -32,7 +32,7 @@ const Header = ({
         sortDirect={sortDirect}
       />
     </SortBarWrapper>
-    <HelloBtn onClick={openModalFunc}>More</HelloBtn>
+    <HelloBtn onClick={openModalFunc}>{isEnglish ? `more` : `więcej`}</HelloBtn>
     <LangButtonWrapper>
       <LangButton isEnglish={isEnglish} lang={lang} />
     </LangButtonWrapper>

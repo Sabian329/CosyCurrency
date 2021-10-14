@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
+  height: 20rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border: solid 1px #ffff;
   padding: 2rem;
   border-radius: 19px;
+  @media only screen and (max-width: 900px) {
+    text-align: center;
+  }
   img {
     width: 1rem;
   }
@@ -19,11 +24,12 @@ export const Wrapper = styled.section`
     border-radius: 10px;
     margin-bottom: 1rem;
     :hover {
+      cursor: pointer;
       font-size: 1.4rem;
     }
   }
 `;
 
-export const NoFavH1 = styled.h1`
+export const NoFavH1 = styled.h3`
   font-size: 2rem;
 `;

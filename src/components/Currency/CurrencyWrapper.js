@@ -15,11 +15,15 @@ const CurrencyWrapper = ({
   const [ind, setInd] = useState();
   let filterLeng = filterApi().length;
 
+  const closeByWrapper = () => {
+    setInd(0);
+  };
+
   return (
-    <CrrWrapper>
+    <CrrWrapper onClick={() => closeByWrapper()}>
       {isFiltered ? (
         filterLeng === 0 ? (
-          <NoFavourites setIsFiltered={setIsFiltered} />
+          <NoFavourites isEnglish={isEnglish} setIsFiltered={setIsFiltered} />
         ) : (
           filterApi().map((item, index) => (
             <CurrencyItem

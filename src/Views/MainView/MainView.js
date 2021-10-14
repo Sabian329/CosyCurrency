@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MainStylesView } from "./MainViewStyled";
-import { LinkTBa } from "../../Constants/Links";
+import { LinkTBa, LinkTBb } from "../../Constants/Links";
 import Header from "../../components/Header/Header";
 import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
 import { Modal } from "../../components/Modal/Index";

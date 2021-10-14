@@ -4,8 +4,15 @@ import { arrows } from "../../Constants/arrows";
 import { FavBtn, OpenBtn, OptionWrapper, Wrapper } from "./CurrencyDropStyled";
 import heart from "../../Asets/heart2.png";
 import heartRed from "../../Asets/heart3.png";
+import { CalculateDrop } from "../CalculateDrop/CalculateDrop";
 
-const CurrencyDrop = ({ value, short, favourites, setFavourites }) => {
+const CurrencyDrop = ({
+  value,
+  short,
+  favourites,
+  setFavourites,
+  isEnglish,
+}) => {
   const [inputValue, setInputValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +21,7 @@ const CurrencyDrop = ({ value, short, favourites, setFavourites }) => {
   return (
     <Wrapper>
       <OptionWrapper>
-        <p>add to favourites</p>
+        <p>{isEnglish ? "add to favourites" : "dodaj do ulubionych"}</p>
         <FavBtn
           onClick={() =>
             favourites.includes(short)
@@ -30,24 +37,24 @@ const CurrencyDrop = ({ value, short, favourites, setFavourites }) => {
         </FavBtn>
       </OptionWrapper>
       <OptionWrapper>
-        <p>exchange</p>
+        <p>{isEnglish ? "exchange" : "wymiana"}</p>
         {isOpen ? (
-          <OpenBtn
-            onClick={() => setIsOpen(!isOpen)}
-          >{`close${arrows.up}`}</OpenBtn>
+          <OpenBtn onClick={() => setIsOpen(!isOpen)}>
+            {isEnglish ? `close${arrows.up}` : `zamknij${arrows.up}`}
+          </OpenBtn>
         ) : (
-          <OpenBtn
-            onClick={() => setIsOpen(!isOpen)}
-          >{`open${arrows.down}`}</OpenBtn>
+          <OpenBtn onClick={() => setIsOpen(!isOpen)}>
+            {isEnglish ? `open${arrows.down}` : `otwórz${arrows.down}`}
+          </OpenBtn>
         )}
       </OptionWrapper>
       <UnmountClosed isOpened={isOpen}>
-        <input
-          type="number"
-          placeholder="PLN"
-          onChange={(e) => setInputValue(e.target.value)}
+        <CalculateDrop
+          value={value}
+          short={short}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
         />
-        <div>{Math.round((inputValue / value) * 100) / 100 + ` ` + short}</div>
       </UnmountClosed>
     </Wrapper>
   );

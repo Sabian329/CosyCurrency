@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { UnmountClosed } from "react-collapse";
-import { Wrapper, BtnsWrapper } from "./SortBarStyled";
+import { Wrapper } from "./SortBarStyled";
 import { arrows } from "../../Constants/arrows";
 
 const SortBar = ({
@@ -9,6 +8,7 @@ const SortBar = ({
   sortDirect,
   setIsFiltered,
   isFiltered,
+  closeModalFunc,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [arrow, setArrow] = useState(false);
@@ -24,48 +24,41 @@ const SortBar = ({
     setArrow(false);
     sortBy("mid");
   };
+
+  const closeAndFilter = () => {
+    closeModalFunc();
+    setIsFiltered(!isFiltered);
+  };
+
   return (
     <Wrapper>
-      {isEnglish ? (
-        <p onClick={() => setIsOpen(!isOpen)}>{`more${
-          isOpen ? arrows.up : arrows.down
-        }`}</p>
-      ) : (
-        <p onClick={() => setIsOpen(!isOpen)}>{`więcej${
-          isOpen ? arrows.up : arrows.down
-        }`}</p>
-      )}
-      <UnmountClosed isOpened={isOpen}>
-        <BtnsWrapper>
-          <button onClick={() => nameFunc()}>
-            {isEnglish ? (
-              <p>{`sort by name${arrow ? ar : empty}`}</p>
-            ) : (
-              <p>{`sortój według nazwy${arrow ? ar : empty}`}</p>
-            )}
-          </button>
-          <button onClick={() => valueFunc()}>
-            {isEnglish ? (
-              <p>{`sort by value${arrow ? empty : ar}`}</p>
-            ) : (
-              <p>{`sortuj według wartości${arrow ? empty : ar}`}</p>
-            )}
-          </button>
-          <button onClick={() => setIsFiltered(!isFiltered)}>
-            {isFiltered ? (
-              isEnglish ? (
-                <p>show all</p>
-              ) : (
-                <p>pokaż wszystkie</p>
-              )
-            ) : isEnglish ? (
-              <p>show favourites</p>
-            ) : (
-              <p>pokaż ulubione</p>
-            )}
-          </button>
-        </BtnsWrapper>
-      </UnmountClosed>
+      <button onClick={() => nameFunc()}>
+        {isEnglish ? (
+          <p>{`sort by name${arrow ? ar : empty}`}</p>
+        ) : (
+          <p>{`sortój według nazwy${arrow ? ar : empty}`}</p>
+        )}
+      </button>
+      <button onClick={() => valueFunc()}>
+        {isEnglish ? (
+          <p>{`sort by value${arrow ? empty : ar}`}</p>
+        ) : (
+          <p>{`sortuj według wartości${arrow ? empty : ar}`}</p>
+        )}
+      </button>
+      <button onClick={() => closeAndFilter()}>
+        {isFiltered ? (
+          isEnglish ? (
+            <p>show all</p>
+          ) : (
+            <p>wszystkie</p>
+          )
+        ) : isEnglish ? (
+          <p>favourites</p>
+        ) : (
+          <p>ulubione</p>
+        )}
+      </button>
     </Wrapper>
   );
 };

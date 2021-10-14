@@ -1,17 +1,15 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.nav`
-  position: absolute;
-  top: 0rem;
-  left: 47%;
+  display: flex;
   padding: 0;
   margin: 0;
   @media only screen and (max-width: 900px) {
-    position: absolute;
-    top: 20%;
-    left: 0;
-    right: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #0090c1;
   }
   p {
     display: block;
@@ -40,9 +38,4 @@ export const Wrapper = styled.nav`
       }
     }
   }
-`;
-export const BtnsWrapper = styled.div`
-  background-color: rgba(100, 100, 100, 1.201);
-  border-radius: 10px;
-  margin: 0 1rem 0 1rem;
 `;

@@ -13,8 +13,8 @@ export const CrrItemWrapper = styled.li`
   align-items: center;
   flex-wrap: wrap;
   height: 6rem;
-  width: 32rem;
-  background-color: #2e8de7;
+  width: 33rem;
+  background-color: #046e8f;
   margin: 1rem 1rem 0 1rem;
   border-radius: 10px;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
@@ -24,6 +24,9 @@ export const CrrItemWrapper = styled.li`
     width: 19rem;
     margin: 0.7rem 0 0 0;
     flex-wrap: nowrap;
+  }
+  :hover {
+    cursor: pointer;
   }
 `;
 export const Item = styled.p`

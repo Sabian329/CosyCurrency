@@ -3,7 +3,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #68aff2;
+  background-color: #38aecc;
   width: 25rem;
   border-radius: 0 0 15px 15px;
   padding: 1rem;
@@ -49,6 +49,9 @@ export const FavBtn = styled.button`
   background: transparent;
   img {
     width: 1.4rem;
+    :hover {
+      cursor: pointer;
+    }
   }
 `;
 export const OpenBtn = styled.button`
@@ -58,8 +61,11 @@ export const OpenBtn = styled.button`
   border-radius: 7px;
   padding: 0.5rem;
   font-size: 1rem;
-  background-color: #c9ebff;
-  color: #818181;
+  background-color: #0090c1;
+  color: #ffff;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  :hover {
+    cursor: pointer;
+  }
 `;

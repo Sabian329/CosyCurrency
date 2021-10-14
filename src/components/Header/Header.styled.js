@@ -4,13 +4,16 @@ export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2e8de7;
+  background-color: #046e8f;
   margin-left: 2rem;
   border-radius: 3rem;
   padding: 0 0rem 0 1rem;
   color: white;
   -webkit-box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.4);
   box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.4);
+  :hover {
+    cursor: pointer;
+  }
   img {
     margin-left: 1rem;
     height: 4rem;
@@ -18,7 +21,8 @@ export const LogoWrapper = styled.div`
     animation-name: slide-in;
     animation-duration: 2s;
     :hover {
-      height: 4.5rem;
+      transform: rotate(10deg);
+      cursor: pointer;
     }
 
     @keyframes slide-in {
@@ -63,7 +67,7 @@ export const Wrapper = styled.header`
 export const HelloBtn = styled.button`
   height: 2rem;
   width: 5rem;
-  background-color: #2e8de7;
+  background-color: #046e8f;
   color: #ffff;
   border: none;
   border-radius: 3rem;
@@ -84,7 +88,7 @@ export const SortBarWrapper = styled.div`
   }
 `;
 export const LangButtonWrapper = styled.div`
-  margin-right: 2rem;
+  margin-right: 5rem;
   @media only screen and (max-width: 900px) {
     display: none;
   }

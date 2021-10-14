@@ -18,6 +18,7 @@ export const Modal = ({
         <LangButton isEnglish={isEnglish} lang={lang} />
       </LangButtonWrapper>
       <SortBar
+        closeModalFunc={closeModalFunc}
         isFiltered={isFiltered}
         setIsFiltered={setIsFiltered}
         isEnglish={isEnglish}

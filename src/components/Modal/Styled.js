@@ -17,18 +17,19 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  top: 50%;
+  top: 50vh;
   transform: translateY(-50%);
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 30vw;
   height: 50vh;
-  background-color: rgb(180, 180, 180);
+  background-color: #38aecc;
   box-shadow: 0px 20px 40px -10px rgba(#818181, 0.5);
   position: fixed;
   border-radius: 15px;
   z-index: 100;
+  border: solid 1px #fff;
   @media only screen and (max-width: 550px) {
     width: 65vw;
     height: 55vh;

@@ -33,7 +33,7 @@ const CurrencyItem = ({
   };
 
   return (
-    <MainWrapper>
+    <MainWrapper onClick={(proxy) => proxy.stopPropagation()}>
       <CrrItemWrapper onClick={() => swithDrop()}>
         {short.slice(0, -2) === "X" ? (
           <Flag src={moneylogo} alt="Flag" />
@@ -61,6 +61,7 @@ const CurrencyItem = ({
       </CrrItemWrapper>
       <UnmountClosed isOpened={isOpen}>
         <CurrencyDrop
+          isEnglish={isEnglish}
           favourites={favourites}
           setFavourites={setFavourites}
           value={value}
