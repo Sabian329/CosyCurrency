@@ -12,6 +12,11 @@ export const Wrapper = styled.section`
   @media only screen and (max-width: 900px) {
     text-align: center;
   }
+  input {
+    @media only screen and (max-width: 900px) {
+      width: 1rem;
+    }
+  }
   img {
     width: 1rem;
   }
@@ -25,7 +30,8 @@ export const Wrapper = styled.section`
     margin-bottom: 1rem;
     :hover {
       cursor: pointer;
-      font-size: 1.4rem;
+      border: 1px solid #ddd;
+      color: #ddd;
     }
   }
 `;

@@ -26,6 +26,7 @@ const SortBar = ({
   };
 
   const closeAndFilter = () => {
+    closeModalFunc();
     setIsFiltered(!isFiltered);
   };
 

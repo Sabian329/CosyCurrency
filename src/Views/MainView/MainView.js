@@ -54,6 +54,9 @@ const MainView = () => {
     let filtered = apiData.filter((x) => favourites.includes(x.code));
     return filtered;
   };
+  const closeModalFunc = () => {
+    console.log("works");
+  };
   return (
     <MainStylesView>
       <Header
@@ -64,6 +67,7 @@ const MainView = () => {
         openModalFunc={() => setIsModal(true)}
         setIsFiltered={setIsFiltered}
         isFiltered={isFiltered}
+        closeModalFunc={closeModalFunc}
       />
       {isModal && (
         <Modal

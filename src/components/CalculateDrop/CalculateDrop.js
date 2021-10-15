@@ -8,7 +8,9 @@ export const CalculateDrop = ({ value, short, setInputValue, inputValue }) => {
     <Wrapper>
       <div>
         <input
-          type="number"
+          type="text"
+          name="phone"
+          maxLength="8"
           placeholder={calculateDirect ? "PLN" : short}
           onChange={(e) => setInputValue(e.target.value)}
         />
@@ -29,14 +31,30 @@ export const CalculateDrop = ({ value, short, setInputValue, inputValue }) => {
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15rem;
+  padding: 0 1rem 0 1rem;
+  input {
+    @media only screen and (max-width: 900px) {
+      width: 10rem;
+      overflow: hidden;
+    }
+  }
+  div {
+    overflow: hidden;
+    width: 10rem;
+  }
 `;
+
 const Swith = styled.button`
   margin-left: 1rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   border: none;
   border-radius: 7px;
-  padding: 0.2rem;
+  padding: 0 0.6rem 0 0.6rem;
   font-size: 1.6rem;
   background-color: #0090c1;
   color: #ffff;
