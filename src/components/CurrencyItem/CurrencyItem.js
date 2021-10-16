@@ -7,7 +7,7 @@ import {
   Flag,
   MainWrapper,
   ItemsWrapper,
-} from "./CurrncyStyled";
+} from "../Currency/CurrncyStyled";
 import { names } from "../../Constants/currencyNames";
 import moneylogo from "../../Asets/moneylogo.png";
 import { UnmountClosed } from "react-collapse";

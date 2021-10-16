@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
   input {
     background-color: transparent;
     border: none;
-    border-bottom: 2px #ffff solid;
     color: #ffff;
     font-size: 1rem;
     :focus {

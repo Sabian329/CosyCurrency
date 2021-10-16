@@ -7,18 +7,20 @@ export const CalculateDrop = ({ value, short, setInputValue, inputValue }) => {
   return (
     <Wrapper>
       <div>
-        <input
-          type="text"
-          name="phone"
-          maxLength="8"
-          placeholder={calculateDirect ? "PLN" : short}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-
+        <Input>
+          <p>{calculateDirect ? "PLN" : short}</p>
+          <input
+            type="text"
+            name="phone"
+            maxLength="8"
+            placeholder="..."
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+        </Input>
         <div>
           {calculateDirect
-            ? Math.round((inputValue / value) * 100) / 100 + ` ` + short
-            : Math.round(inputValue * value * 100) / 100 + ` ` + "PLN"}
+            ? short + ` ` + Math.round((inputValue / value) * 100) / 100
+            : `PLN  ${Math.round(inputValue * value * 100) / 100}`}
         </div>
       </div>
 
@@ -36,6 +38,10 @@ const Wrapper = styled.div`
   width: 15rem;
   padding: 0 1rem 0 1rem;
   input {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  input {
     @media only screen and (max-width: 900px) {
       width: 10rem;
       overflow: hidden;
@@ -44,11 +50,12 @@ const Wrapper = styled.div`
   div {
     overflow: hidden;
     width: 10rem;
+    padding-top: 0.5rem;
   }
 `;
 
 const Swith = styled.button`
-  margin-left: 1rem;
+  margin: 1.2rem 0 0 0;
   height: 2.5rem;
   display: flex;
   align-items: center;
@@ -63,4 +70,9 @@ const Swith = styled.button`
   :hover {
     cursor: pointer;
   }
+`;
+const Input = styled.div`
+  color: #ffd700;
+  display: flex;
+  border-bottom: solid #ffff 1px;
 `;

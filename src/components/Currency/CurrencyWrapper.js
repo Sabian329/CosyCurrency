@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CrrWrapper } from "./CurrncyStyled";
-import CurrencyItem from "./CurrencyItem";
+import CurrencyItem from "../CurrencyItem/CurrencyItem";
 import { NoFavourites } from "../NoFavourites/Index";
 
 const CurrencyWrapper = ({
