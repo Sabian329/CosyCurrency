@@ -7,12 +7,12 @@ import {
   Flag,
   MainWrapper,
   ItemsWrapper,
-} from "../Currency/CurrncyStyled";
+} from "../CurrencyWrapper/Styled";
 import { names } from "../../Constants/currencyNames";
 import moneylogo from "../../Asets/moneylogo.png";
 import { UnmountClosed } from "react-collapse";
-import CurrencyDrop from "../CurrencyDrop/CurrencyDrop";
-const CurrencyItem = ({
+import { CurrencyDrop } from "../CurrencyDrop/Index";
+export const CurrencyItem = ({
   favourites,
   setFavourites,
   currency,
@@ -71,4 +71,3 @@ const CurrencyItem = ({
     </MainWrapper>
   );
 };
-export default CurrencyItem;

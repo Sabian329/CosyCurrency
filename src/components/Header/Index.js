@@ -1,15 +1,15 @@
 import React from "react";
-import logo from "../../Asets/logo.png";
+import logo from "../../Asets/logoN.png";
 import {
   HelloBtn,
   LogoWrapper,
   SortBarWrapper,
   Wrapper,
   LangButtonWrapper,
-} from "./Header.styled";
-import LangButton from "../LangButton/LangButton";
-import SortBar from "../SortBar/SortBar";
-const Header = ({
+} from "./Styled";
+import { LangButton } from "../LangButton/Index";
+import { SortBar } from "../SortBar/Index";
+export const Header = ({
   isEnglish,
   sortBy,
   lang,
@@ -40,5 +40,3 @@ const Header = ({
     </LangButtonWrapper>
   </Wrapper>
 );
-
-export default Header;

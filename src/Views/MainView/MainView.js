@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { MainStylesView } from "./MainViewStyled";
-import { LinkTBa, LinkTBb } from "../../Constants/Links";
-import Header from "../../components/Header/Header";
-import CurrencyWrapper from "../../components/Currency/CurrencyWrapper";
+import { LinkTBa } from "../../Constants/Links";
+import { Header } from "../../components/Header/Index";
+import { CurrencyWrapper } from "../../components/CurrencyWrapper/Index";
 import { Modal } from "../../components/Modal/Index";
 
 const MainView = () => {

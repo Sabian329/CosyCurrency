@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Wrapper } from "./SortBarStyled";
+import { Wrapper } from "./Styled";
 import { arrows } from "../../Constants/arrows";
 
-const SortBar = ({
+export const SortBar = ({
   sortBy,
   isEnglish,
   sortDirect,
@@ -62,5 +62,3 @@ const SortBar = ({
     </Wrapper>
   );
 };
-
-export default SortBar;

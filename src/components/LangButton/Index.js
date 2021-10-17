@@ -1,8 +1,8 @@
 import React from "react";
 import { Flags } from "../../Constants/LanguageFalgs";
-import { Btn } from "./LangButtonStyled";
+import { Btn } from "./Styled";
 
-const LangButton = ({ isEnglish, lang }) => (
+export const LangButton = ({ isEnglish, lang }) => (
   <>
     {isEnglish ? (
       <Btn onClick={lang}>
@@ -17,4 +17,3 @@ const LangButton = ({ isEnglish, lang }) => (
     )}
   </>
 );
-export default LangButton;

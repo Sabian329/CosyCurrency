@@ -1,6 +1,6 @@
 import React from "react";
-import LangButton from "../LangButton/LangButton";
-import SortBar from "../SortBar/SortBar";
+import { LangButton } from "../LangButton/Index";
+import { SortBar } from "../SortBar/Index";
 import { Wrapper, MainWrapper, LangButtonWrapper } from "./Styled";
 
 export const Modal = ({

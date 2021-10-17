@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { CrrWrapper } from "./CurrncyStyled";
-import CurrencyItem from "../CurrencyItem/CurrencyItem";
+import { CrrWrapper } from "./Styled";
+import { CurrencyItem } from "../CurrencyItem/Index";
 import { NoFavourites } from "../NoFavourites/Index";
 
-const CurrencyWrapper = ({
+export const CurrencyWrapper = ({
   items,
   isEnglish,
   favourites,
@@ -55,5 +55,3 @@ const CurrencyWrapper = ({
     </CrrWrapper>
   );
 };
-
-export default CurrencyWrapper;

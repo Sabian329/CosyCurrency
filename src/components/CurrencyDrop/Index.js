@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { UnmountClosed } from "react-collapse";
 import { arrows } from "../../Constants/arrows";
-import { FavBtn, OpenBtn, OptionWrapper, Wrapper } from "./CurrencyDropStyled";
-import heart from "../../Asets/heart2.png";
-import heartRed from "../../Asets/heart3.png";
-import { CalculateDrop } from "../CalculateDrop/CalculateDrop";
+import { FavBtn, OpenBtn, OptionWrapper, Wrapper } from "./Styled";
+import heart from "../../Asets/heart22.png";
+import heartRed from "../../Asets/heart33.png";
+import { CalculateDrop } from "../CalculateDrop/Index";
 
-const CurrencyDrop = ({
+export const CurrencyDrop = ({
   value,
   short,
   favourites,
@@ -59,5 +59,3 @@ const CurrencyDrop = ({
     </Wrapper>
   );
 };
-
-export default CurrencyDrop;

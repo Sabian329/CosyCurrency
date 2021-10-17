@@ -12,11 +12,7 @@ export const Wrapper = styled.section`
   @media only screen and (max-width: 900px) {
     text-align: center;
   }
-  input {
-    @media only screen and (max-width: 900px) {
-      width: 1rem;
-    }
-  }
+
   img {
     width: 1rem;
   }
