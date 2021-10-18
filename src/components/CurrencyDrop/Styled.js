@@ -47,7 +47,7 @@ export const FavBtn = styled.button`
   font-size: 1rem;
   background: transparent;
   img {
-    width: 1.4rem;
+    width: 2rem;
     :hover {
       cursor: pointer;
     }
