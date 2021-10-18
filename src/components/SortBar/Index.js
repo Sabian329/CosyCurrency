@@ -36,7 +36,7 @@ export const SortBar = ({
         {isEnglish ? (
           <p>{`sort by name${arrow ? ar : empty}`}</p>
         ) : (
-          <p>{`sortój według nazwy${arrow ? ar : empty}`}</p>
+          <p>{`sortuj według nazwy${arrow ? ar : empty}`}</p>
         )}
       </button>
       <button onClick={() => valueFunc()}>
