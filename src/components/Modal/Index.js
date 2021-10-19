@@ -4,7 +4,7 @@ import { SortBar } from "../SortBar/Index";
 import { Wrapper, MainWrapper, LangButtonWrapper } from "./Styled";
 
 export const Modal = ({
-  closeModalFunc,
+  closeModal,
   isEnglish,
   lang,
   sortBy,
@@ -12,13 +12,13 @@ export const Modal = ({
   isFiltered,
   setIsFiltered,
 }) => (
-  <MainWrapper onClick={closeModalFunc}>
+  <MainWrapper onClick={closeModal}>
     <Wrapper onClick={(proxy) => proxy.stopPropagation()}>
       <LangButtonWrapper>
         <LangButton isEnglish={isEnglish} lang={lang} />
       </LangButtonWrapper>
       <SortBar
-        closeModalFunc={closeModalFunc}
+        closeModal={closeModal}
         isFiltered={isFiltered}
         setIsFiltered={setIsFiltered}
         isEnglish={isEnglish}

@@ -54,8 +54,8 @@ const MainView = () => {
     let filtered = apiData.filter((x) => favourites.includes(x.code));
     return filtered;
   };
-  const closeModalFunc = () => {
-    console.log("works");
+  const closeModal = () => {
+    console.log("closed");
   };
   return (
     <MainStylesView>
@@ -64,17 +64,17 @@ const MainView = () => {
         lang={() => setIsEnglish(!isEnglish)}
         sortBy={sortBy}
         sortDirect={sortDirect}
-        openModalFunc={() => setIsModal(true)}
+        openModal={() => setIsModal(true)}
         setIsFiltered={setIsFiltered}
         isFiltered={isFiltered}
-        closeModalFunc={closeModalFunc}
+        closeModal={closeModal}
       />
       {isModal && (
         <Modal
           isModal={isModal}
           isEnglish={isEnglish}
           lang={() => setIsEnglish(!isEnglish)}
-          closeModalFunc={() => setIsModal(false)}
+          closeModal={() => setIsModal(false)}
           sortBy={sortBy}
           sortDirect={sortDirect}
           setIsFiltered={setIsFiltered}
