@@ -32,7 +32,7 @@ export const Wrapper = styled.div`
   border: solid 1px #fff;
   @media only screen and (max-width: 550px) {
     width: 65vw;
-    height: 55vh;
+    height: 65vh;
   }
 `;
 

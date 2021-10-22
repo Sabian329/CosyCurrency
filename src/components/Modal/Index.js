@@ -11,6 +11,7 @@ export const Modal = ({
   sortDirect,
   isFiltered,
   setIsFiltered,
+  search,
 }) => (
   <MainWrapper onClick={closeModal}>
     <Wrapper onClick={(proxy) => proxy.stopPropagation()}>
@@ -24,6 +25,7 @@ export const Modal = ({
         isEnglish={isEnglish}
         sortBy={sortBy}
         sortDirect={sortDirect}
+        search={search}
       />
     </Wrapper>
   </MainWrapper>

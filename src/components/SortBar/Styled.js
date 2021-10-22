@@ -1,7 +1,11 @@
+import React from "react";
 import styled from "styled-components";
+import magicon from "../../Asets/magicon.png";
 
 export const Wrapper = styled.nav`
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
   @media only screen and (max-width: 900px) {
@@ -37,5 +41,28 @@ export const Wrapper = styled.nav`
         color: #dddd;
       }
     }
+  }
+`;
+
+export const SortInput = styled.input`
+  height: 2rem;
+  background: transparent;
+  border: solid 1px #ffff;
+  border-radius: 15px;
+  font-size: 1rem;
+  padding: 0 1rem 0 1rem;
+  cursor: pointer;
+  color: #ffff;
+  @media only screen and (max-width: 900px) {
+    width: 9rem;
+
+    margin: 0 2rem 1rem 2rem;
+  }
+  ::placeholder {
+    background-image: url(${magicon});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #ffff;
   }
 `;

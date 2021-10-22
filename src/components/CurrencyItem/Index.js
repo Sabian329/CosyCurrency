@@ -19,17 +19,17 @@ export const CurrencyItem = ({
   code: short,
   mid: value,
   isEnglish,
-  index,
-  ind,
-  setInd,
+  id,
+  currentId,
+  setCurrentId,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => setIsOpen(ind === index ? true : false), [ind]);
+  useEffect(() => setIsOpen(currentId === id ? true : false), [currentId]);
 
   const swithDrop = () => {
-    setInd(index);
     setIsOpen(!isOpen);
+    setCurrentId(id);
   };
 
   return (
@@ -39,10 +39,9 @@ export const CurrencyItem = ({
           <Flag src={moneylogo} alt="Flag" />
         ) : (
           <Flag
-            src={`https://www.countryflags.io/${short.slice(
-              0,
-              -1
-            )}/flat/64.png`}
+            src={`https://lipis.github.io/flag-icon-css/flags/4x3/${short
+              .toLowerCase()
+              .slice(0, -1)}.svg`}
             alt="Flag"
           />
         )}

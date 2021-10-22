@@ -8,6 +8,7 @@ export const Btn = styled.a`
   }
 
   img {
+    padding-right: 0.2rem;
     height: 32px;
     width: 32px;
   }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Wrapper } from "./Styled";
+import { SortInput, Wrapper } from "./Styled";
 import { arrows } from "../../Constants/arrows";
+import magicon from "../../Asets/magicon.png";
 
 export const SortBar = ({
   sortBy,
@@ -9,6 +10,7 @@ export const SortBar = ({
   setIsFiltered,
   isFiltered,
   closeModal,
+  search,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [arrow, setArrow] = useState(false);
@@ -59,6 +61,13 @@ export const SortBar = ({
           <p>ulubione</p>
         )}
       </button>
+      {isFiltered === false && (
+        <SortInput
+          onChange={search}
+          placeholder={isEnglish ? "search" : "szukaj"}
+          maxLength="3"
+        />
+      )}
     </Wrapper>
   );
 };

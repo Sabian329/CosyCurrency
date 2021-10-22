@@ -18,6 +18,7 @@ export const Header = ({
   setIsFiltered,
   isFiltered,
   closeModal,
+  search,
 }) => (
   <Wrapper>
     <LogoWrapper onClick={() => setIsFiltered(false)}>
@@ -32,6 +33,7 @@ export const Header = ({
         sortBy={sortBy}
         sortDirect={sortDirect}
         closeModal={closeModal}
+        search={search}
       />
     </SortBarWrapper>
     <HelloBtn onClick={openModal}>{isEnglish ? `more` : `więcej`}</HelloBtn>

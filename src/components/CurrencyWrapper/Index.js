@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CrrWrapper } from "./Styled";
 import { CurrencyItem } from "../CurrencyItem/Index";
 import { NoFavourites } from "../NoFavourites/Index";
 
 export const CurrencyWrapper = ({
-  items,
   isEnglish,
   favourites,
   setFavourites,
   isFiltered,
   filterApi,
   setIsFiltered,
+  showSearch,
 }) => {
-  const [ind, setInd] = useState();
+  const [currentId, setCurrentId] = useState(NaN);
   let filterLeng = filterApi().length;
 
+  useEffect(() => isFiltered && setCurrentId(NaN), [isFiltered]);
+
   const closeByWrapper = () => {
-    setInd(0);
+    setCurrentId(NaN);
   };
 
   return (
@@ -25,28 +27,26 @@ export const CurrencyWrapper = ({
         filterLeng === 0 ? (
           <NoFavourites isEnglish={isEnglish} setIsFiltered={setIsFiltered} />
         ) : (
-          filterApi().map((item, index) => (
+          filterApi().map((item) => (
             <CurrencyItem
-              ind={ind}
-              setInd={setInd}
+              setCurrentId={setCurrentId}
+              currentId={currentId}
               favourites={favourites}
               setFavourites={setFavourites}
               isEnglish={isEnglish}
-              index={index + 1}
               key={item.mid}
               {...item}
             />
           ))
         )
       ) : (
-        items.map((item, index) => (
+        showSearch().map((item) => (
           <CurrencyItem
-            ind={ind}
-            setInd={setInd}
+            setCurrentId={setCurrentId}
+            currentId={currentId}
             favourites={favourites}
             setFavourites={setFavourites}
             isEnglish={isEnglish}
-            index={index + 1}
             key={item.mid}
             {...item}
           />

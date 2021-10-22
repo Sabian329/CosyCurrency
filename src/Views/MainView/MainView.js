@@ -8,7 +8,7 @@ import { Modal } from "../../components/Modal/Index";
 const MainView = () => {
   const [errors, setErrors] = useState(null);
   const [apiData, setApiData] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState("");
   const [isEnglish, setIsEnglish] = useState(true);
   const [isModal, setIsModal] = useState(false);
   const [sortDirect, setSortDirect] = useState(false);
@@ -16,6 +16,7 @@ const MainView = () => {
     localStorage.getItem("favs") ? JSON.parse(localStorage.getItem("favs")) : []
   );
   const [isFiltered, setIsFiltered] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     localStorage.setItem("favs", JSON.stringify(favourites));
@@ -28,9 +29,14 @@ const MainView = () => {
         (result) => {
           setIsLoaded(true);
           setApiData(
-            [...result[0].rates].sort((a, b) => (a.code > b.code ? 1 : -1))
+            [...result[0].rates]
+              .sort((a, b) => (a.code > b.code ? 1 : -1))
+              .map((item, index) => {
+                item.id = index;
+                return item;
+              })
           );
-          console.log("is loaded " + isLoaded);
+          console.log(`is loaded ${isLoaded}`);
         },
         (error) => {
           setIsLoaded(true);
@@ -48,6 +54,13 @@ const MainView = () => {
       : setApiData([
           ...apiData.sort((a, b) => (a?.[param] < b?.[param] ? 1 : -1)),
         ]);
+  };
+  const search = (e) => {
+    setInputValue(e.target.value.toUpperCase());
+  };
+  const showSearch = () => {
+    const searched = apiData.filter((item) => item.code.includes(inputValue));
+    return inputValue.length ? searched : apiData;
   };
 
   const filterApi = () => {
@@ -68,10 +81,10 @@ const MainView = () => {
         setIsFiltered={setIsFiltered}
         isFiltered={isFiltered}
         closeModal={closeModal}
+        search={search}
       />
       {isModal && (
         <Modal
-          isModal={isModal}
           isEnglish={isEnglish}
           lang={() => setIsEnglish(!isEnglish)}
           closeModal={() => setIsModal(false)}
@@ -79,17 +92,19 @@ const MainView = () => {
           sortDirect={sortDirect}
           setIsFiltered={setIsFiltered}
           isFiltered={isFiltered}
+          search={search}
         />
       )}
 
       <CurrencyWrapper
-        items={apiData}
         isEnglish={isEnglish}
         favourites={favourites}
         setFavourites={setFavourites}
         isFiltered={isFiltered}
         setIsFiltered={setIsFiltered}
         filterApi={filterApi}
+        showSearch={showSearch}
+        inputValue={inputValue}
       />
     </MainStylesView>
   );
