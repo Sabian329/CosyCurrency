@@ -25,7 +25,7 @@ export const CurrencyItem = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => setIsOpen(currentId === id ? true : false), [currentId]);
+  useEffect(() => setIsOpen(currentId === id ? true : false), [currentId, id]);
 
   const swithDrop = () => {
     setIsOpen(!isOpen);
@@ -39,7 +39,7 @@ export const CurrencyItem = ({
           <Flag src={moneylogo} alt="Flag" />
         ) : (
           <Flag
-            src={`https://lipis.github.io/flag-icon-css/flags/4x3/${short
+            src={`https://flagicons.lipis.dev/flags/4x3/${short
               .toLowerCase()
               .slice(0, -1)}.svg`}
             alt="Flag"

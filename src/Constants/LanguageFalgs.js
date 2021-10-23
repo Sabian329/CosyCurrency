@@ -1,4 +1,4 @@
 export const Flags = {
-  polish: "https://lipis.github.io/flag-icon-css/flags/4x3/pl.svg",
-  english: "https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg",
+  polish: "https://flagicons.lipis.dev/flags/4x3/pl.svg",
+  english: "https://flagicons.lipis.dev/flags/4x3/gb.svg",
 };

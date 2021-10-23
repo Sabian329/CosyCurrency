@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { SortInput, Wrapper } from "./Styled";
 import { arrows } from "../../Constants/arrows";
-import magicon from "../../Asets/magicon.png";
 
 export const SortBar = ({
   sortBy,
@@ -12,7 +11,6 @@ export const SortBar = ({
   closeModal,
   search,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [arrow, setArrow] = useState(false);
 
   let ar = sortDirect ? arrows.down : arrows.up;

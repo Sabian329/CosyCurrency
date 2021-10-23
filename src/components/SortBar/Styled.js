@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import magicon from "../../Asets/magicon.png";
 
@@ -55,7 +54,6 @@ export const SortInput = styled.input`
   color: #ffff;
   @media only screen and (max-width: 900px) {
     width: 9rem;
-
     margin: 0 2rem 1rem 2rem;
   }
   ::placeholder {

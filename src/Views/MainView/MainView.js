@@ -44,7 +44,7 @@ const MainView = () => {
           console.log(errors);
         }
       );
-  }, []);
+  }, [isLoaded, errors]);
   const sortBy = (param) => {
     setSortDirect(!sortDirect);
     sortDirect
