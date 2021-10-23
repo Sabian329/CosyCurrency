@@ -82,6 +82,7 @@ const MainView = () => {
         isFiltered={isFiltered}
         closeModal={closeModal}
         search={search}
+        setInputValue={setInputValue}
       />
       {isModal && (
         <Modal

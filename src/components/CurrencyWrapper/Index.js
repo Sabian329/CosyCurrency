@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CrrWrapper } from "./Styled";
 import { CurrencyItem } from "../CurrencyItem/Index";
 import { NoFavourites } from "../NoFavourites/Index";
+import { NoResult } from "../NoResult/Index";
 
 export const CurrencyWrapper = ({
   isEnglish,
@@ -39,7 +40,7 @@ export const CurrencyWrapper = ({
             />
           ))
         )
-      ) : (
+      ) : showSearch().length ? (
         showSearch().map((item) => (
           <CurrencyItem
             setCurrentId={setCurrentId}
@@ -51,6 +52,8 @@ export const CurrencyWrapper = ({
             {...item}
           />
         ))
+      ) : (
+        <NoResult isEnglish={isEnglish} />
       )}
     </CrrWrapper>
   );

@@ -1,25 +1,17 @@
 import React from "react";
 import { NoFavH1, Wrapper } from "./Styled";
 
-export const NoResult = ({ setIsFiltered, isEnglish }) => (
+export const NoResult = ({ isEnglish }) => (
   <>
     {isEnglish ? (
       <Wrapper>
-        <NoFavH1>NO FAVOURITES YET</NoFavH1>
-        <p>
-          To add currency to favourites click on currency block and tap the
-          heart.
-        </p>
-        <button onClick={() => setIsFiltered(false)}>Back</button>{" "}
+        <NoFavH1>NO RESULTS</NoFavH1>
+        <p>Sorry, we can not find this currency.</p>
       </Wrapper>
     ) : (
       <Wrapper>
-        <NoFavH1>BRAK ULUBIONYCH</NoFavH1>
-        <p>
-          Aby dodać walutę do ulubionych kliknij w baner waluty, następnie
-          zaznacz ikonę serca.
-        </p>
-        <button onClick={() => setIsFiltered(false)}>Wróć</button>{" "}
+        <NoFavH1>BRAK WYNIKÓW</NoFavH1>
+        <p>Przepraszamy, nie możemy odszukać tej waluty.</p>
       </Wrapper>
     )}
   </>

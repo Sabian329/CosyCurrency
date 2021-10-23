@@ -10,6 +10,7 @@ export const SortBar = ({
   isFiltered,
   closeModal,
   search,
+  setInputValue,
 }) => {
   const [arrow, setArrow] = useState(false);
 
@@ -28,6 +29,7 @@ export const SortBar = ({
   const closeModalByFilter = () => {
     closeModal();
     setIsFiltered(!isFiltered);
+    setInputValue("");
   };
 
   return (
