@@ -16,8 +16,6 @@ export const CrrItemWrapper = styled.li`
   height: 6rem;
   width: 33rem;
   background-color: #e2eafc;
-  /* background-color: #11a9d9; */
-  /* background-color: #baedff; */
   margin: 1rem 1rem 0 1rem;
   border-radius: 10px;
 

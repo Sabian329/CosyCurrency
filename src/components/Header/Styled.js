@@ -4,7 +4,7 @@ export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #01497c;
+  background-color: #b6ccfe;
   margin-left: 2rem;
   border-radius: 3rem;
   padding: 0 0rem 0 1rem;
@@ -40,6 +40,9 @@ export const LogoWrapper = styled.div`
     }
   }
   p {
+    font-family: "Abhaya Libre", serif;
+    font-family: "Monoton", cursive;
+    font-family: "Orbitron", sans-serif;
     @media only screen and (max-width: 550px) {
       margin-left: 0.5rem;
     }
@@ -54,7 +57,7 @@ export const LogoWrapper = styled.div`
 `;
 
 export const Wrapper = styled.header`
-  height: 5rem;
+  height: 6rem;
   width: 100%;
   max-width: 1480px;
   border-radius: 0 0 10px 10px;
@@ -75,7 +78,7 @@ export const Wrapper = styled.header`
 export const HelloBtn = styled.button`
   height: 2rem;
   width: 5rem;
-  background-color: #014f86;
+  background-color: #b6ccfe;
   color: #ffff;
   border: none;
   border-radius: 3rem;
