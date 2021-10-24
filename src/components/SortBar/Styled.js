@@ -12,7 +12,7 @@ export const Wrapper = styled.nav`
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    background-color: #0090c1;
+    background-color: #014f86;
   }
   p {
     display: block;
@@ -45,6 +45,7 @@ export const Wrapper = styled.nav`
 
 export const SortInput = styled.input`
   height: 2rem;
+  width: 9rem;
   background: transparent;
   border: solid 1px #ffff;
   border-radius: 15px;
@@ -52,6 +53,9 @@ export const SortInput = styled.input`
   padding: 0 1rem 0 1rem;
   cursor: pointer;
   color: #ffff;
+  @media only screen and (max-width: 1200px) {
+    width: 9rem;
+  }
   @media only screen and (max-width: 900px) {
     width: 9rem;
     margin: 0 2rem 1rem 2rem;

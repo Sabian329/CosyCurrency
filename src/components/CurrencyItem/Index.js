@@ -7,6 +7,7 @@ import {
   Flag,
   MainWrapper,
   ItemsWrapper,
+  ItemsWrapperPln,
 } from "../CurrencyWrapper/Styled";
 import { names } from "../../Constants/currencyNames";
 import moneylogo from "../../Asets/moneylogo.png";
@@ -53,10 +54,9 @@ export const CurrencyItem = ({
             <Item>{currency}</Item>
           )}
         </ItemsWrapper>
-        <ItemsWrapper>
-          <ItemValue>{Math.round(value * 10000) / 10000}</ItemValue>
-          <ItemValue>PLN</ItemValue>
-        </ItemsWrapper>
+        <ItemsWrapperPln>
+          <ItemValue>{`${Math.round(value * 10000) / 10000} PLN`}</ItemValue>
+        </ItemsWrapperPln>
       </CrrItemWrapper>
       <UnmountClosed isOpened={isOpen}>
         <CurrencyDrop

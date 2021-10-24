@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   width: 30vw;
   height: 50vh;
-  background-color: #38aecc;
+  background-color: #c1d3fe;
   box-shadow: 0px 20px 40px -10px rgba(#818181, 0.5);
   position: fixed;
   border-radius: 15px;

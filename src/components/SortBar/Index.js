@@ -29,23 +29,22 @@ export const SortBar = ({
   const closeModalByFilter = () => {
     closeModal();
     setIsFiltered(!isFiltered);
-    setInputValue("");
   };
 
   return (
     <Wrapper>
       <button onClick={() => sortByName()}>
         {isEnglish ? (
-          <p>{`sort by name${arrow ? ar : empty}`}</p>
+          <p>{`sort by name ${arrow ? ar : empty}`}</p>
         ) : (
-          <p>{`sortuj według nazwy${arrow ? ar : empty}`}</p>
+          <p>{`sortuj według nazwy ${arrow ? ar : empty}`}</p>
         )}
       </button>
       <button onClick={() => sortByValue()}>
         {isEnglish ? (
-          <p>{`sort by value${arrow ? empty : ar}`}</p>
+          <p>{`sort by value ${arrow ? empty : ar}`}</p>
         ) : (
-          <p>{`sortuj według wartości${arrow ? empty : ar}`}</p>
+          <p>{`sortuj według wartości ${arrow ? empty : ar}`}</p>
         )}
       </button>
       <button onClick={() => closeModalByFilter()}>

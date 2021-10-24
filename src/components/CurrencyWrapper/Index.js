@@ -3,6 +3,7 @@ import { CrrWrapper } from "./Styled";
 import { CurrencyItem } from "../CurrencyItem/Index";
 import { NoFavourites } from "../NoFavourites/Index";
 import { NoResult } from "../NoResult/Index";
+import { Loading } from "../Loading/Index";
 
 export const CurrencyWrapper = ({
   isEnglish,
@@ -12,11 +13,15 @@ export const CurrencyWrapper = ({
   filterApi,
   setIsFiltered,
   showSearch,
+  inputValue,
 }) => {
   const [currentId, setCurrentId] = useState(NaN);
   let filterLeng = filterApi().length;
 
-  useEffect(() => isFiltered && setCurrentId(NaN), [isFiltered]);
+  useEffect(
+    () => showSearch().length === 0 && setCurrentId(NaN),
+    [showSearch, currentId]
+  );
 
   const closeByWrapper = () => {
     setCurrentId(NaN);
@@ -52,8 +57,10 @@ export const CurrencyWrapper = ({
             {...item}
           />
         ))
-      ) : (
+      ) : inputValue ? (
         <NoResult isEnglish={isEnglish} />
+      ) : (
+        <Loading />
       )}
     </CrrWrapper>
   );

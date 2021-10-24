@@ -3,7 +3,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #38aecc;
+  background-color: #01497c;
   width: 25rem;
   border-radius: 0 0 15px 15px;
   padding: 1rem;
@@ -60,8 +60,8 @@ export const OpenBtn = styled.button`
   border-radius: 7px;
   padding: 0.5rem;
   font-size: 1rem;
-  background-color: #0090c1;
-  color: #ffff;
+  background-color: #e2eafc;
+  color: #014f86;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   :hover {

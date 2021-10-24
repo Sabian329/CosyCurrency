@@ -10,8 +10,8 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-  background: rgb(61,236,255);
-  background: linear-gradient(90deg, rgba(61,236,255,1) 0%, rgba(56,155,204,1) 100%);
+ background-color:#abc4ff;
+
   color: #ffff;
   margin: 0;
   padding: 0;

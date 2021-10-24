@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { MainStylesView } from "./MainViewStyled";
-import { LinkTBa } from "../../Constants/Links";
-import { Header } from "../../components/Header/Index";
-import { CurrencyWrapper } from "../../components/CurrencyWrapper/Index";
-import { Modal } from "../../components/Modal/Index";
+import { LinkTBa } from "../Constants/Links";
+import { Header } from "../components/Header/Index";
+import { CurrencyWrapper } from "../components/CurrencyWrapper/Index";
+import { Modal } from "../components/Modal/Index";
 
-const MainView = () => {
+export const MainView = () => {
   const [errors, setErrors] = useState(null);
   const [apiData, setApiData] = useState([]);
   const [isLoaded, setIsLoaded] = useState("");
@@ -106,8 +106,8 @@ const MainView = () => {
         filterApi={filterApi}
         showSearch={showSearch}
         inputValue={inputValue}
+        apiData={apiData}
       />
     </MainStylesView>
   );
 };
-export default MainView;

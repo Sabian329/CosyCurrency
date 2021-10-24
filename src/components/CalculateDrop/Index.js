@@ -63,8 +63,8 @@ const Swith = styled.button`
   border-radius: 7px;
   padding: 0 0.6rem 0 0.6rem;
   font-size: 1.6rem;
-  background-color: #0090c1;
-  color: #ffff;
+  background-color: #e2eafc;
+  color: #014f86;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   :hover {

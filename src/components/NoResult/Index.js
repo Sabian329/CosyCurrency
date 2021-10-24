@@ -6,7 +6,7 @@ export const NoResult = ({ isEnglish }) => (
     {isEnglish ? (
       <Wrapper>
         <NoFavH1>NO RESULTS</NoFavH1>
-        <p>Sorry, we can not find this currency.</p>
+        <p>Sorry, we cannot find this currency.</p>
       </Wrapper>
     ) : (
       <Wrapper>

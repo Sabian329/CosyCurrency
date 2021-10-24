@@ -4,7 +4,7 @@ export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #046e8f;
+  background-color: #01497c;
   margin-left: 2rem;
   border-radius: 3rem;
   padding: 0 0rem 0 1rem;
@@ -48,17 +48,25 @@ export const LogoWrapper = styled.div`
     margin-left: 1rem;
     padding: 0 0 0 0.5rem;
   }
+  @media only screen and (max-width: 1100px) {
+    margin-left: 0.1rem;
+  }
 `;
 
 export const Wrapper = styled.header`
   height: 5rem;
   width: 100%;
+  max-width: 1480px;
+  border-radius: 0 0 10px 10px;
   background-color: rgba(100, 100, 100, 0.201);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem;
   position: relative;
+  @media only screen and (max-width: 1480px) {
+    border-radius: unset;
+  }
   @media only screen and (max-width: 550px) {
     padding: 1rem;
   }
@@ -67,7 +75,7 @@ export const Wrapper = styled.header`
 export const HelloBtn = styled.button`
   height: 2rem;
   width: 5rem;
-  background-color: #046e8f;
+  background-color: #014f86;
   color: #ffff;
   border: none;
   border-radius: 3rem;
@@ -89,6 +97,9 @@ export const SortBarWrapper = styled.div`
 `;
 export const LangButtonWrapper = styled.div`
   margin-right: 5rem;
+  @media only screen and (max-width: 1100px) {
+    margin-right: 0.1rem;
+  }
   @media only screen and (max-width: 900px) {
     display: none;
   }
