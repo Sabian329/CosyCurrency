@@ -5,7 +5,7 @@ export const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #b6ccfe;
-  margin-left: 2rem;
+  margin-left: 3rem;
   border-radius: 3rem;
   padding: 0 0rem 0 1rem;
   color: white;
@@ -52,7 +52,7 @@ export const LogoWrapper = styled.div`
     padding: 0 0 0 0.5rem;
   }
   @media only screen and (max-width: 1100px) {
-    margin-left: 0.1rem;
+    margin-left: 1rem;
   }
 `;
 
@@ -101,7 +101,7 @@ export const SortBarWrapper = styled.div`
 export const LangButtonWrapper = styled.div`
   margin-right: 5rem;
   @media only screen and (max-width: 1100px) {
-    margin-right: 0.1rem;
+    margin-right: 1rem;
   }
   @media only screen and (max-width: 900px) {
     display: none;
